@@ -1,0 +1,158 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "sectors": "Sectors",
+    "clients": "Clients",
+    "contact": "Contact",
+    "careers": "Careers",
+    "search": "Search",
+    "language": "عربي"
+  },
+  "hero": {
+    "title1": "Diversified Strength.",
+    "title2": "Unified Vision.",
+    "subtitle": "From marine expertise to logistics, construction, tourism, and beyond — HASCO delivers world-class solutions that power the Kingdom's growth and global ambitions."
+  },
+  "about": {
+    "heading": "About",
+    "headingBrand": "HASCO",
+    "description": "HASCO has grown from a focused logistics provider into a diversified holding group. Based in the Kingdom of Saudi Arabia, we operate across Marine, Logistics, Construction, Shipping, Tourism, Hospitality, and Consultancy, supporting the nation's transformation under Vision 2030.",
+    "button": "Learn More About Us"
+  },
+  "sectors": {
+    "heading": "Sectors at a",
+    "headingBrand": "Glance",
+    "button": "Explore All Sectors",
+    "marine": {
+      "title": "Marine Operations",
+      "description": "Leading maritime services across the Red Sea, providing comprehensive marine consultancy, operations, and professional diving solutions."
+    },
+    "logistics": {
+      "title": "Logistics & Supply Chain",
+      "description": "Integrated logistics solutions with advanced freight forwarding, transportation management, and end-to-end supply chain optimization."
+    },
+    "construction": {
+      "title": "Construction",
+      "description": "Delivering world-class construction projects with unwavering commitment to safety, quality excellence, and sustainable building practices."
+    },
+    "hospitality": {
+      "title": "Hospitality & Events",
+      "description": "Premium hospitality services, exceptional catering experiences, and professional event management for memorable occasions."
+    },
+    "tourism": {
+      "title": "Tourism",
+      "description": "Pioneering tourism development and destination management services supporting the Kingdom's Vision 2030 tourism transformation."
+    },
+    "consultancy": {
+      "title": "Consultancy",
+      "description": "Strategic consultancy services delivering expert insights and innovative solutions across diverse industries and sectors."
+    }
+  },
+  "clients": {
+    "heading": "Trusted",
+    "headingBrand": "Partnerships",
+    "subtitle": "Collaborating with the Kingdom's most ambitious projects and leading organizations",
+    "statement": "Powering the Kingdom's Vision 2030 through strategic partnerships"
+  },
+  "projects": {
+    "heading": "Featured",
+    "headingBrand": "Projects",
+    "subtitle": "Discover how HASCO is contributing to Saudi Arabia's most ambitious development projects",
+    "neom": {
+      "title": "NEOM Marine Infrastructure",
+      "description": "Marine construction support for NEOM development",
+      "impact": "Supporting the world's most ambitious smart city project"
+    },
+    "amaala": {
+      "title": "AMAALA Logistics Hub",
+      "description": "Comprehensive logistics solutions for luxury tourism development",
+      "impact": "Enabling seamless operations for premium tourism destination"
+    },
+    "redSea": {
+      "title": "Red Sea Development Support",
+      "description": "Marine operations and facility management services",
+      "impact": "Supporting sustainable tourism development initiatives"
+    },
+    "cruise": {
+      "title": "Saudi Cruise Terminal",
+      "description": "Port operations and hospitality services for cruise tourism",
+      "impact": "Establishing Saudi Arabia as a premier cruise destination"
+    },
+    "previous": "Previous project",
+    "next": "Next project",
+    "goTo": "Go to project"
+  },
+  "stats": {
+    "years": {
+      "number": "20",
+      "suffix": "+",
+      "label": "Years of Excellence",
+      "description": "Delivering quality since 2005"
+    },
+    "sectors": {
+      "number": "7",
+      "suffix": "+",
+      "label": "Core Sectors",
+      "description": "Diversified expertise"
+    },
+    "projects": {
+      "number": "100",
+      "suffix": "+",
+      "label": "Projects Delivered",
+      "description": "Across the Kingdom"
+    }
+  },
+  "news": {
+    "heading": "Latest",
+    "headingBrand": "News",
+    "subtitle": "Stay updated with the latest developments, partnerships, and industry insights",
+    "item1": {
+      "date": "January 2025",
+      "title": "Red Sea Global secures SAR 6.5 billion funding for AMAALA",
+      "description": "Major investment milestone achieved for luxury tourism development project"
+    },
+    "item2": {
+      "date": "December 2024",
+      "title": "AMAALA Residences reveal new coastal masterplan",
+      "description": "Innovative design showcases sustainable luxury living on the Red Sea coast"
+    },
+    "item3": {
+      "date": "November 2024",
+      "title": "Logistics partnership announced for NEOM seaport expansion",
+      "description": "Strategic collaboration to enhance maritime infrastructure and operations"
+    },
+    "previous": "Previous news",
+    "next": "Next news",
+    "goTo": "Go to news"
+  },
+  "cta": {
+    "heading": "Partner with HASCO",
+    "description": "Join us in shaping the future of Saudi Arabia's development. Connect with our team to explore partnership opportunities.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "E-mail address",
+    "terms": "By submitting this form, you confirm that you have read and agreed to our",
+    "termsLink": "Terms and Conditions",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "submit": "Submit"
+  },
+  "footer": {
+    "description": "Excellence in integrated solutions across marine, logistics, and development sectors. Powering Saudi Arabia's Vision 2030 with 20+ years of proven expertise.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "sectors": "Sectors",
+    "projects": "Projects",
+    "clients": "Clients",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "jeddah": "Jeddah, Al Safa",
+    "saudi": "Kingdom of Saudi Arabia",
+    "copyright": "© 2025 HASCO Group. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
+  }
+}

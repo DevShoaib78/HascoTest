@@ -1,0 +1,8 @@
+export { default as Hero } from './Hero'
+export { default as About } from './About'
+export { default as Sectors } from './Sectors'
+export { default as Clients } from './Clients'
+export { default as Projects } from './Projects'
+export { default as Stats } from './Stats'
+export { default as News } from './News'
+export { default as CTA } from './CTA'
