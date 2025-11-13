@@ -1,17 +1,9 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Montserrat } from 'next/font/google';
 import { locales } from '@/src/i18n/request';
 import LenisProvider from '@/src/components/providers/LenisProvider';
 import SplashScreen from '@/src/components/ui/SplashScreen';
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-montserrat'
-});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -36,8 +28,32 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} className={montserrat.variable}>
-      <body className={montserrat.className}>
+    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <head>
+        {/* Preload critical fonts for better performance */}
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/static/Montserrat-Regular.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/static/Montserrat-Bold.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Helvetica/Helvetica.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <SplashScreen />
           <LenisProvider>

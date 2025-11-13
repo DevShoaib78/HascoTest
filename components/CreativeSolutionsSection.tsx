@@ -16,7 +16,7 @@ export default function CreativeSolutionsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div>
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 relative">
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 relative font-heading">
               CREATIVE
               <br />
               SOLUTIONS
@@ -31,12 +31,12 @@ export default function CreativeSolutionsSection() {
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                     </svg>
                   </div>
-                  <span className="text-white text-lg">{solution}</span>
+                  <span className="text-white text-lg font-body">{solution}</span>
                 </div>
               ))}
             </div>
 
-            <button className="bg-white text-brand-primary px-8 py-4 text-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105">
+            <button className="bg-white text-brand-primary px-8 py-4 text-lg font-semibold font-heading hover:bg-gray-100 transition-colors transform hover:scale-105">
               READ MORE
             </button>
           </div>

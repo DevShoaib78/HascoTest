@@ -183,27 +183,27 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-4xl">
           {/* Premium headline with text effects */}
-          <h1 className="text-7xl md:text-9xl font-black text-white leading-[0.9] mb-8 text-left font-primary">
-            <span className="block drop-shadow-2xl animate-fade-in-up font-primary" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-7xl md:text-9xl font-black text-white leading-[0.9] mb-8 text-left font-heading">
+            <span className="block drop-shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               ONLY CERTIFIED
             </span>
-            <span className="block text-brand-primary text-8xl md:text-[10rem] drop-shadow-2xl animate-fade-in-up font-primary" style={{ animationDelay: '0.4s' }}>
+            <span className="block text-brand-primary text-8xl md:text-[10rem] drop-shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               PHONES
             </span>
           </h1>
           
           {/* Premium description with subtle animation */}
-          <p className="text-lg text-gray-300 mb-12 max-w-xl leading-relaxed animate-fade-in-up font-secondary" style={{ animationDelay: '0.6s' }}>
+          <p className="text-lg text-gray-300 mb-12 max-w-xl leading-relaxed animate-fade-in-up font-body" style={{ animationDelay: '0.6s' }}>
             Quisque elementum vulputate risus, id pellentesque
           </p>
 
           {/* Premium buttons with enhanced effects */}
           <div className="flex flex-col sm:flex-row gap-4 max-w-md animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <button className="group relative bg-brand-primary text-white px-8 py-4 text-lg font-semibold hover:bg-brand-secondary transition-all duration-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-primary/25 transform hover:scale-105">
+            <button className="group relative bg-brand-primary text-white px-8 py-4 text-lg font-semibold font-heading hover:bg-brand-secondary transition-all duration-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-primary/25 transform hover:scale-105">
               {/* Button shine effect */}
               <span className="relative z-10">READ MORE</span>
             </button>
-            <button className="group relative bg-white text-brand-primary border-2 border-brand-primary px-8 py-4 text-lg font-semibold hover:bg-brand-primary hover:text-white transition-all duration-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-primary/25 transform hover:scale-105">
+            <button className="group relative bg-white text-brand-primary border-2 border-brand-primary px-8 py-4 text-lg font-semibold font-heading hover:bg-brand-primary hover:text-white transition-all duration-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:shadow-brand-primary/25 transform hover:scale-105">
               {/* Button shine effect */}
               <span className="relative z-10">JOIN US</span>
             </button>

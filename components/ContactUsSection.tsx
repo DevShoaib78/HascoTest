@@ -112,7 +112,7 @@ export default function ContactUsSection() {
               </div>
 
               <div className="group">
-                <label htmlFor="phone" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300">
+                <label htmlFor="phone" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300 font-heading">
                   Phone Number
                 </label>
                 <div className="relative">
@@ -138,7 +138,7 @@ export default function ContactUsSection() {
               </div>
 
               <div className="group">
-                <label htmlFor="notes" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300">
+                <label htmlFor="notes" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300 font-heading">
                   Additional Notes
                 </label>
                 <div className="relative">
@@ -167,7 +167,7 @@ export default function ContactUsSection() {
             {/* Right Column */}
             <div className="space-y-6">
               <div className="group">
-                <label htmlFor="email" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300">
+                <label htmlFor="email" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300 font-heading">
                   Email
                 </label>
                 <div className="relative">
@@ -193,7 +193,7 @@ export default function ContactUsSection() {
               </div>
 
               <div className="group">
-                <label htmlFor="address" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300">
+                <label htmlFor="address" className="block text-sm font-medium text-brand-dark mb-2 group-hover:text-brand-primary transition-colors duration-300 font-heading">
                   Address
                 </label>
                 <div className="relative">

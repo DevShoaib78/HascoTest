@@ -15,10 +15,10 @@ module.exports = {
         'brand-light': '#f8fafc',
       },
       fontFamily: {
-        sans: ['var(--font-montserrat)', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui'],
-        heading: ['var(--font-montserrat)', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui'],
+        sans: ['Montserrat', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui'],
+        heading: ['Montserrat', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui'],
         body: ['Helvetica', 'Arial', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        primary: ['var(--font-montserrat)', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui'],
+        primary: ['Montserrat', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui'],
         secondary: ['Helvetica', 'Arial', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       fontSize: {

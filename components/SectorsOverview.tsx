@@ -78,38 +78,73 @@ export default function SectorsOverview() {
           <div className={`w-24 h-1 bg-brand-primary mx-auto rounded-full transition-all duration-1000 delay-300 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
         </div>
 
-        {/* Seamless auto-scrolling carousel */}
-        <div className={`relative overflow-hidden px-0 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-8'}`}>
-          <div className="flex w-[200%] animate-[glanceScroll_40s_linear_infinite] hover:pause">
-            {[...sectors, ...sectors].map((sector, index) => (
+        {/* Ongoing Carousel */}
+        <div className="relative overflow-hidden">
+          {/* Carousel Track - Infinite Loop */}
+          <div className="flex animate-scroll-infinite gap-4">
+            {/* Triple the sectors for seamless loop */}
+            {[...sectors, ...sectors, ...sectors].map((sector, index) => (
               <div
-                key={`${sector.title}-${index}`}
-                className="relative group min-h-[220px] md:min-h-[260px] lg:min-h-[340px] flex-shrink-0 w-1/2 md:w-1/4 lg:w-1/6"
+                key={`sector-${index}`}
+                className="relative flex-shrink-0 w-[300px] sm:w-[340px] md:w-[400px] lg:w-[450px] h-[450px] md:h-[500px] lg:h-[550px] group cursor-pointer"
               >
-                <Image
-                  src={sector.backgroundImage}
-                  alt={sector.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority={index < 2}
-                />
-                <div className="absolute inset-0 bg-black/45 group-hover:bg-black/25 transition-colors duration-500"></div>
-                <div className="absolute inset-x-0 bottom-4 text-center px-2">
-                  <h3 className="text-white whitespace-nowrap text-xl md:text-2xl lg:text-3xl font-medium tracking-tight drop-shadow-lg">
+                {/* Background Image - Fully visible */}
+                <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    src={sector.backgroundImage}
+                    alt={sector.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 300px, (max-width: 768px) 340px, (max-width: 1024px) 400px, 450px"
+                  />
+                </div>
+
+                {/* Subtle Gradient Overlay - lighter so image is fully visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-2xl"></div>
+
+                {/* Content - Always visible */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 rounded-2xl">
+                  {/* Title - Always visible */}
+                  <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 drop-shadow-2xl leading-tight">
                     {sector.title}
                   </h3>
+                  
+                  {/* Description - Always visible */}
+                  <p className="text-white/95 text-sm md:text-base leading-relaxed drop-shadow-lg line-clamp-3">
+                    {sector.description}
+                  </p>
                 </div>
+
+                {/* Hover Effect - Subtle scale */}
+                <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-brand-secondary rounded-2xl transition-all duration-300"></div>
               </div>
             ))}
           </div>
-          <style jsx>{`
-            @keyframes glanceScroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            .hover\\:pause:hover { animation-play-state: paused; }
-          `}</style>
+
+          {/* Gradient Fade Edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white/50 to-transparent pointer-events-none z-10"></div>
         </div>
+
+        <style jsx global>{`
+          @keyframes scroll-infinite {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-100% / 3));
+            }
+          }
+
+          .animate-scroll-infinite {
+            animation: scroll-infinite 45s linear infinite;
+            will-change: transform;
+          }
+
+          .animate-scroll-infinite:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
 
         <div className={`text-center mt-16 px-6 sm:px-8 lg:px-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <button className="bg-brand-primary text-white px-8 py-4 text-button-lg font-medium font-heading hover:bg-brand-secondary rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">

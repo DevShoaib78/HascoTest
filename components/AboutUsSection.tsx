@@ -12,14 +12,14 @@ export default function AboutUsSection() {
 
         {/* Description */}
         <div className="mb-12">
-          <p className="text-subtitle-md md:text-subtitle-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-subtitle-md md:text-subtitle-lg text-gray-600 leading-relaxed max-w-3xl mx-auto font-body">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
 
         {/* Copyright */}
         <div className="pt-8 border-t border-gray-300">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 font-body">
             Communication © 2025 - Privacy Policy
           </p>
         </div>

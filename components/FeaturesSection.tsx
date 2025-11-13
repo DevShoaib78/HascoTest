@@ -44,11 +44,11 @@ export default function FeaturesSection() {
               <div className="flex justify-center mb-6">
                 {feature.icon}
               </div>
-              <h3 className="text-2xl font-bold text-black mb-4 relative">
+              <h3 className="text-2xl font-bold text-black mb-4 relative font-heading">
                 {feature.title}
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-brand-primary"></div>
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed font-body">
                 {feature.description}
               </p>
             </div>

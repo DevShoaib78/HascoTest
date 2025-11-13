@@ -138,7 +138,7 @@ export default function FeaturesIconSection() {
               </h3>
               
               {/* Enhanced description */}
-              <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300">
+              <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors duration-300 font-body">
                 {feature.description}
               </p>
             </div>

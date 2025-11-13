@@ -3,8 +3,106 @@
 @tailwind utilities;
 
 /* ============================================
-   HASCO BRAND FONTS - Per Brand Guidelines
+   HASCO BRAND FONTS - Local Font Files
    ============================================ */
+
+/* Montserrat Font Family */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/static/Montserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Helvetica Font Family */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica/Helvetica-BoldOblique.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   --font-montserrat: 'Montserrat', sans-serif;
@@ -13,11 +111,19 @@
 
 /* Typography Utility Classes */
 .font-heading {
-  font-family: var(--font-montserrat);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .font-body {
-  font-family: var(--font-helvetica);
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.font-primary {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-secondary {
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 /* ============================================
@@ -26,17 +132,20 @@
 
 /* All Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-montserrat);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Regular weight - uses Montserrat-Regular.ttf */
 }
 
 /* Navigation */
 nav, .nav {
-  font-family: var(--font-montserrat);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Regular weight - uses Montserrat-Regular.ttf */
 }
 
 /* Buttons */
 button, .btn {
-  font-family: var(--font-montserrat);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Regular weight - uses Montserrat-Regular.ttf */
 }
 
 /* ============================================
@@ -45,17 +154,17 @@ button, .btn {
 
 /* Body Text Elements */
 p {
-  font-family: var(--font-helvetica);
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 /* Lists */
 ul, ol, li {
-  font-family: var(--font-helvetica);
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 /* Spans and Divs (when used for body content) */
 span, div {
-  font-family: var(--font-helvetica);
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 * {

@@ -12,15 +12,15 @@ export default function SplashScreen() {
     // Trigger logo reveal animation after mount
     setTimeout(() => setIsLoaded(true), 200)
 
-    // Start exit animation after 5 seconds (3 + 2 additional seconds)
+    // Start exit animation after 2 seconds
     const exitTimer = setTimeout(() => {
       setIsExiting(true)
-    }, 5000)
+    }, 2000)
 
     // Remove component after exit animation completes
     const removeTimer = setTimeout(() => {
       setShouldRender(false)
-    }, 6500) // 5s display + 1.5s exit animation
+    }, 3500) // 2s display + 1.5s exit animation
 
     return () => {
       clearTimeout(exitTimer)

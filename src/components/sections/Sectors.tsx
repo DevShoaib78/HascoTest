@@ -75,64 +75,65 @@ export default function Sectors() {
           <div className={`w-24 h-1 bg-brand-primary mx-auto rounded-full transition-all duration-1000 delay-300 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
         </div>
 
-        {/* Desktop: Red Sea Global Style Hover-Expand Layout */}
-        <div className={`hidden md:flex h-[320px] lg:h-[360px] transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          {sectors.map((sector, index) => (
-            <div
-              key={sector.title}
-              className={`relative overflow-hidden cursor-pointer transition-all duration-500 ease-out ${
-                hoveredIndex === null 
-                  ? 'flex-1' 
-                  : hoveredIndex === index 
-                    ? 'flex-[2]' 
-                    : 'flex-[0.7]'
-              }`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {/* Background Image */}
-              <Image
-                src={sector.backgroundImage}
-                alt={sector.title}
-                fill
-                className="object-cover transition-transform duration-500"
-                priority={index < 3}
-              />
-              
-              {/* Overlay */}
-              <div className={`absolute inset-0 transition-all duration-500 ${
-                hoveredIndex === index 
-                  ? 'bg-black/40' 
-                  : hoveredIndex === null 
-                    ? 'bg-black/50' 
-                    : 'bg-black/70'
-              }`}></div>
-              
-              {/* Content */}
-              <div className={`absolute inset-0 flex flex-col justify-end p-6 md:p-8 pb-8 md:pb-10 transition-all duration-500 ease-out ${
-                hoveredIndex === index 
-                  ? 'items-start' 
-                  : 'items-center'
-              }`}>
-                {/* Title - Always Visible */}
-                <h3 className="text-white font-semibold font-heading text-xl lg:text-2xl mb-3 text-center">
-                  {sector.title}
-                </h3>
-                
-                {/* Description - Fade in AFTER card fully expands */}
-                <div className={`transition-all ${
-                  hoveredIndex === index 
-                    ? 'opacity-100 duration-300 delay-300' 
-                    : 'opacity-0 duration-200 delay-0 pointer-events-none'
-                }`}>
-                  <p className="text-white/90 font-body text-sm md:text-base leading-relaxed max-w-lg">
+        {/* Desktop: Ongoing Carousel */}
+        <div className={`hidden md:block relative overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="flex animate-sectors-scroll gap-4">
+            {/* Triple the sectors for seamless infinite loop */}
+            {[...sectors, ...sectors, ...sectors].map((sector, index) => (
+              <div
+                key={`sector-${index}`}
+                className="relative flex-shrink-0 w-[350px] lg:w-[420px] h-[450px] lg:h-[500px] group cursor-pointer"
+              >
+                {/* Background Image - Fully visible */}
+                <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    src={sector.backgroundImage}
+                    alt={sector.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 350px, 420px"
+                  />
+                </div>
+
+                {/* Subtle Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent rounded-2xl"></div>
+
+                {/* Content - Always visible */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 rounded-2xl">
+                  {/* Title - Always visible */}
+                  <h3 className="text-white text-2xl lg:text-3xl font-semibold mb-3 drop-shadow-2xl leading-tight font-heading">
+                    {sector.title}
+                  </h3>
+                  
+                  {/* Description - Always visible */}
+                  <p className="text-white/95 text-sm lg:text-base leading-relaxed drop-shadow-lg font-body line-clamp-3">
                     {sector.description}
                   </p>
                 </div>
+
+                {/* Hover Ring Effect */}
+                <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-brand-secondary rounded-2xl transition-all duration-300"></div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
+
+        <style jsx global>{`
+          @keyframes sectors-scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(calc(-100% / 3));
+            }
+          }
+
+          .animate-sectors-scroll {
+            animation: sectors-scroll 20s linear infinite;
+            will-change: transform;
+          }
+        `}</style>
 
         {/* Mobile: Card Grid Layout */}
         <div className={`md:hidden grid grid-cols-1 gap-6 px-6 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>

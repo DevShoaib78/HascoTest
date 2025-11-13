@@ -15,7 +15,7 @@ export default function Hero() {
     <section 
       className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-no-repeat"
       style={{
-        backgroundImage: 'url(/images/skyline3.jpg)',
+        backgroundImage: 'url(/images/Skyline1.jpg)',
         backgroundPosition: 'center 40%'
       }}
     >
