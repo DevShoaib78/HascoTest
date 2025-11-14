@@ -53,7 +53,7 @@ export default function CTA() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight font-heading font-bold" style={{ fontWeight: 700 }}>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight font-heading">
                 <span className="text-brand-primary">{t('heading')}</span>
               </h2>
               

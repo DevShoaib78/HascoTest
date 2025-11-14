@@ -68,7 +68,7 @@ export default function Sectors() {
     <section id="sectors-overview" className="py-20 bg-white relative overflow-hidden">
       <div className="w-full">
         <div className={`text-center mb-16 px-6 sm:px-8 lg:px-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-title-lg md:text-title-xl leading-tight font-heading font-bold mb-4" style={{ fontWeight: 700 }}>
+          <h2 className="text-title-lg md:text-title-xl leading-tight font-heading mb-4">
             <span className="text-gray-900">{t('heading')} </span>
             <span className="text-brand-primary">{t('headingBrand')}</span>
           </h2>
