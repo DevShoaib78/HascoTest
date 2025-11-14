@@ -53,8 +53,8 @@ export default function CTA() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight font-heading">
-                <span className="font-semibold text-brand-primary">{t('heading')}</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight font-heading font-bold" style={{ fontWeight: 700 }}>
+                <span className="text-brand-primary">{t('heading')}</span>
               </h2>
               
               <p className="text-base md:text-lg text-gray-600 leading-relaxed font-body">
@@ -72,7 +72,7 @@ export default function CTA() {
                     placeholder={t('firstName')}
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300 font-body"
                     required
                   />
                   <input
@@ -81,7 +81,7 @@ export default function CTA() {
                     placeholder={t('lastName')}
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300 font-body"
                     required
                   />
                 </div>
@@ -92,7 +92,7 @@ export default function CTA() {
                   placeholder={t('email')}
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent transition-all duration-300 font-body"
                   required
                 />
                 
@@ -105,7 +105,7 @@ export default function CTA() {
                 
                 <button
                   type="submit"
-                  className="w-full md:w-auto px-8 py-3 bg-[#C4A574] hover:bg-[#B39564] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full md:w-auto px-8 py-3 bg-[#C4A574] hover:bg-[#B39564] text-white font-heading rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   {t('submit')}
                 </button>

@@ -23,9 +23,7 @@ export default function Header() {
   }, [])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href !== `/${locale}`) {
-      e.preventDefault()
-    }
+    // Allow all navigation - no longer preventing default
   }
 
   const switchLanguage = () => {
@@ -36,11 +34,11 @@ export default function Header() {
 
   const navItems = [
     { href: `/${locale}`, label: t('home'), enabled: true },
-    { href: `/${locale}/about`, label: t('about'), enabled: false },
-    { href: `/${locale}/sectors`, label: t('sectors'), enabled: false },
-    { href: `/${locale}/clients`, label: t('clients'), enabled: false },
-    { href: `/${locale}/contact`, label: t('contact'), enabled: false },
-    { href: `/${locale}/careers`, label: t('careers'), enabled: false }
+    { href: `/${locale}/about`, label: t('about'), enabled: true },
+    { href: `/${locale}/sectors`, label: t('sectors'), enabled: true },
+    { href: `/${locale}/clients`, label: t('clients'), enabled: true },
+    { href: `/${locale}/contact`, label: t('contact'), enabled: true },
+    { href: `/${locale}/careers`, label: t('careers'), enabled: true }
   ]
 
   return (
@@ -92,7 +90,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`group relative transition-all duration-300 font-semibold font-heading text-lg tracking-wide py-3 px-2 ${
+                className={`group relative transition-all duration-300 font-heading font-bold text-lg tracking-wide py-3 px-2 ${
                   isScrolled
                     ? item.enabled
                       ? 'text-[#004A81] hover:text-[#66AADD] cursor-pointer'
@@ -119,7 +117,7 @@ export default function Header() {
             {/* Language Toggle */}
             <button 
               onClick={switchLanguage}
-              className={`transition-all duration-300 font-semibold text-lg tracking-wide px-4 py-2 rounded-lg ${
+              className={`transition-all duration-300 font-heading text-lg tracking-wide px-4 py-2 rounded-lg ${
                 isScrolled
                   ? 'text-[#004A81] hover:text-white hover:bg-[#004A81] border border-[#004A81]/20 hover:border-[#004A81]'
                   : 'text-white hover:text-[#66AADD]'
@@ -163,7 +161,7 @@ export default function Header() {
                     handleNavClick(e, item.href)
                     setIsMenuOpen(false)
                   }}
-                  className={`transition-colors duration-300 font-medium font-heading text-base py-2 border-l-2 border-transparent pl-4 ${
+                  className={`transition-colors duration-300 font-heading font-bold text-base py-2 border-l-2 border-transparent pl-4 ${
                     item.enabled
                       ? 'text-[#004A81] hover:text-[#66AADD] hover:border-[#004A81] cursor-pointer'
                       : 'text-[#004A81]/50 cursor-default'
@@ -177,7 +175,7 @@ export default function Header() {
               <div className={`flex items-center pt-4 border-t border-[#004A81]/20 ${locale === 'ar' ? 'pr-4' : 'pl-4'}`}>
                 <button 
                   onClick={switchLanguage}
-                  className="transition-colors duration-300 font-medium text-sm px-3 py-1.5 rounded text-[#004A81] hover:text-white hover:bg-[#004A81] border border-[#004A81]/20"
+                  className="transition-colors duration-300 font-heading text-sm px-3 py-1.5 rounded text-[#004A81] hover:text-white hover:bg-[#004A81] border border-[#004A81]/20"
                 >
                   {t('language')}
                 </button>

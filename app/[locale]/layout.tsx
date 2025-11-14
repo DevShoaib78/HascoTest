@@ -33,21 +33,21 @@ export default async function LocaleLayout({
         {/* Preload critical fonts for better performance */}
         <link
           rel="preload"
-          href="/fonts/Montserrat/static/Montserrat-Regular.ttf"
+          href="/fonts/Montserrat-Regular.ttf"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/Montserrat/static/Montserrat-Bold.ttf"
+          href="/fonts/Montserrat-Bold.ttf"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/Helvetica/Helvetica.ttf"
+          href="/fonts/Helvetica.ttf"
           as="font"
           type="font/ttf"
           crossOrigin="anonymous"

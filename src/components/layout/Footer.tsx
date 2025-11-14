@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 font-heading">{t('quickLinks')}</h3>
+            <h3 className="text-xl font-heading mb-6">{t('quickLinks')}</h3>
             <ul className="space-y-3 font-body">
               {[
                 { key: 'home', href: `/${locale}` },
@@ -79,7 +79,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 font-heading">{t('contactUs')}</h3>
+            <h3 className="text-xl font-heading mb-6">{t('contactUs')}</h3>
             <div className="space-y-4 font-body">
               <div className={`flex items-start gap-3 ${locale === 'ar' ? 'flex-row-reverse' : ''}`}>
                 <MapPin size={20} className="text-brand-secondary mt-1 flex-shrink-0" strokeWidth={2} />

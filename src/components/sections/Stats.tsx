@@ -55,7 +55,7 @@ export default function Stats() {
             >
               <div className="relative">
                 {/* Number */}
-                <div className="text-7xl md:text-8xl font-bold text-white font-heading mb-2">
+                <div className="text-7xl md:text-8xl text-white font-heading mb-2">
                   {isVisible && (
                     <AnimatedCounter 
                       end={stat.number} 
@@ -71,7 +71,7 @@ export default function Stats() {
                 </div>
                 
                 {/* Label */}
-                <h3 className="text-xl md:text-2xl font-semibold text-white font-heading mb-2">
+                <h3 className="text-xl md:text-2xl text-white font-heading mb-2">
                   {stat.label}
                 </h3>
                 

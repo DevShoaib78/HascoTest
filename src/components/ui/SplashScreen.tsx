@@ -96,7 +96,7 @@ export default function SplashScreen() {
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <p className="text-white/70 text-sm md:text-base font-light tracking-wider font-body">
+          <p className="text-white/70 text-sm md:text-base tracking-wider font-body">
             Powering Saudi Arabia's Vision 2030
           </p>
         </div>

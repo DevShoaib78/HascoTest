@@ -42,9 +42,9 @@ export default function About() {
         <div className="pl-4 sm:pl-6 lg:pl-8 pr-6 sm:pr-8 lg:pr-16">
           {/* Section Heading - Far Left */}
           <div className={`mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-title-lg md:text-title-xl font-light text-gray-900 leading-tight font-heading mb-4">
-              <span className="font-extralight">{t('heading')} </span>
-              <span className="font-semibold text-brand-primary">{t('headingBrand')}</span>
+            <h2 className="text-title-lg md:text-title-xl leading-tight font-heading font-bold mb-4" style={{ fontWeight: 700 }}>
+              <span className="text-gray-900">{t('heading')} </span>
+              <span className="text-brand-primary">{t('headingBrand')}</span>
             </h2>
             <div className={`w-24 h-1 bg-brand-primary rounded-full transition-all duration-1000 delay-300 ${isVisible ? 'scale-x-100' : 'scale-x-0'} ${locale === 'ar' ? 'origin-right' : 'origin-left'}`}></div>
           </div>
@@ -61,7 +61,7 @@ export default function About() {
               </div>
 
               <div className={`pt-4 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <button className="group relative bg-brand-primary text-white px-8 py-4 text-button-lg font-semibold font-heading hover:bg-brand-secondary rounded-lg shadow-lg hover:shadow-xl hover:shadow-brand-primary/30 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                <button className="group relative bg-brand-primary text-white px-8 py-4 text-button-lg font-heading hover:bg-brand-secondary rounded-lg shadow-lg hover:shadow-xl hover:shadow-brand-primary/30 transform hover:scale-105 transition-all duration-300 overflow-hidden">
                   <span className="relative z-10 tracking-wide">{t('button')}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </button>

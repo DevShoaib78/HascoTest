@@ -4,103 +4,33 @@
 
 /* ============================================
    HASCO BRAND FONTS - Local Font Files
+   Only Montserrat-Regular and Helvetica-Regular
    ============================================ */
 
-/* Montserrat Font Family */
+/* Montserrat-Regular - Primary Font */
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Montserrat-Bold - Primary Font Bold Weight */
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/static/Montserrat-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Helvetica Font Family */
+/* Helvetica-Regular - Secondary Font */
 @font-face {
   font-family: 'Helvetica';
-  src: url('/fonts/Helvetica/helvetica-light-587ebe5a59211.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica';
-  src: url('/fonts/Helvetica/Helvetica.ttf') format('truetype');
+  src: url('/fonts/Helvetica.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica';
-  src: url('/fonts/Helvetica/Helvetica-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica';
-  src: url('/fonts/Helvetica/Helvetica-Oblique.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Helvetica';
-  src: url('/fonts/Helvetica/Helvetica-BoldOblique.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -112,58 +42,99 @@
 /* Typography Utility Classes */
 .font-heading {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 400 !important; /* Always use Montserrat-Regular.ttf */
+}
+
+/* Allow bold weight for navigation links */
+nav a.font-heading.font-bold,
+nav a.font-heading[style*="font-weight: 700"],
+nav a.font-heading[style*="fontWeight: 700"],
+.nav a.font-heading.font-bold,
+.nav a.font-heading[style*="font-weight: 700"],
+.nav a.font-heading[style*="fontWeight: 700"] {
+  font-weight: 700 !important; /* Use Montserrat-Bold.ttf */
 }
 
 .font-body {
   font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400 !important; /* Always use Helvetica.ttf */
 }
 
 .font-primary {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 400 !important;
 }
 
 .font-secondary {
   font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400 !important;
 }
 
 /* ============================================
-   MONTSERRAT - Headings, Navigation, Buttons, Primary UI
+   MONTSERRAT - Primary Typeface
+   Headings (h1-h6), Display/Hero Typography, Navigation, Buttons, CTAs
    ============================================ */
 
-/* All Headings */
+/* All Headings - Montserrat-Regular */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400; /* Regular weight - uses Montserrat-Regular.ttf */
+  font-weight: 400; /* Default to Montserrat-Regular.ttf */
 }
 
-/* Navigation */
+/* Allow bold headings when explicitly set */
+h1[style*="font-weight: 700"], 
+h2[style*="font-weight: 700"], 
+h3[style*="font-weight: 700"],
+h4[style*="font-weight: 700"],
+h5[style*="font-weight: 700"],
+h6[style*="font-weight: 700"],
+h1.font-bold,
+h2.font-bold,
+h3.font-bold,
+h4.font-bold,
+h5.font-bold,
+h6.font-bold {
+  font-weight: 700 !important; /* Use Montserrat-Bold.ttf */
+}
+
+/* Navigation - Montserrat (allows bold) */
 nav, .nav {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400; /* Regular weight - uses Montserrat-Regular.ttf */
+  font-weight: 400; /* Default to Regular */
 }
 
-/* Buttons */
+/* Navigation links with bold weight */
+nav a[style*="font-weight: 700"],
+nav a.font-bold,
+.nav a[style*="font-weight: 700"],
+.nav a.font-bold {
+  font-weight: 700 !important; /* Use Montserrat-Bold.ttf */
+}
+
+/* Buttons - Montserrat-Regular */
 button, .btn {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400; /* Regular weight - uses Montserrat-Regular.ttf */
+  font-weight: 400 !important;
 }
 
 /* ============================================
-   HELVETICA - Body Text, Paragraphs, Descriptions, Lists
+   HELVETICA - Secondary Typeface
+   Body Copy, Paragraphs, Descriptive Text, Secondary UI Labels
    ============================================ */
 
-/* Body Text Elements */
+/* Body Text - Helvetica Regular */
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400; /* Uses Helvetica.ttf */
+}
+
+/* Paragraphs - Helvetica */
 p {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-/* Lists */
+/* Lists - Helvetica */
 ul, ol, li {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-}
-
-/* Spans and Divs (when used for body content) */
-span, div {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
@@ -202,24 +173,6 @@ html.lenis {
   }
 }
 
-/* Custom scrollbar for better visual experience */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #014c83, #1e40af);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #1e40af, #014c83);
-}
-
 html,
 body {
   max-width: 100vw;
@@ -229,17 +182,13 @@ body {
 body {
   color: #1f2937;
   background: #ffffff;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400; /* Uses Helvetica.ttf */
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 /* Custom scrollbar */
@@ -258,6 +207,12 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #5BA7DB;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
 }
 
 /* Premium animations */

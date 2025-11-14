@@ -68,9 +68,9 @@ export default function Sectors() {
     <section id="sectors-overview" className="py-20 bg-white relative overflow-hidden">
       <div className="w-full">
         <div className={`text-center mb-16 px-6 sm:px-8 lg:px-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-title-lg md:text-title-xl font-light text-gray-900 leading-tight font-heading mb-4">
-            <span className="font-extralight">{t('heading')} </span>
-            <span className="font-semibold text-brand-primary">{t('headingBrand')}</span>
+          <h2 className="text-title-lg md:text-title-xl leading-tight font-heading font-bold mb-4" style={{ fontWeight: 700 }}>
+            <span className="text-gray-900">{t('heading')} </span>
+            <span className="text-brand-primary">{t('headingBrand')}</span>
           </h2>
           <div className={`w-24 h-1 bg-brand-primary mx-auto rounded-full transition-all duration-1000 delay-300 ${isVisible ? 'scale-x-100' : 'scale-x-0'}`}></div>
         </div>
@@ -101,7 +101,7 @@ export default function Sectors() {
                 {/* Content - Always visible */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8 rounded-2xl">
                   {/* Title - Always visible */}
-                  <h3 className="text-white text-2xl lg:text-3xl font-semibold mb-3 drop-shadow-2xl leading-tight font-heading">
+                  <h3 className="text-white text-2xl lg:text-3xl mb-3 drop-shadow-2xl leading-tight font-heading">
                     {sector.title}
                   </h3>
                   
@@ -157,7 +157,7 @@ export default function Sectors() {
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-6">
                 {/* Title */}
-                <h3 className="text-white font-semibold font-heading text-xl mb-3">
+                <h3 className="text-white font-heading text-xl mb-3">
                   {sector.title}
                 </h3>
                 
@@ -171,7 +171,7 @@ export default function Sectors() {
         </div>
 
         <div className={`text-center mt-16 px-6 sm:px-8 lg:px-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <button className="group relative bg-brand-primary text-white px-8 py-4 text-button-lg font-semibold font-heading hover:bg-brand-secondary rounded-lg shadow-lg hover:shadow-xl hover:shadow-brand-primary/30 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+          <button className="group relative bg-brand-primary text-white px-8 py-4 text-button-lg font-heading hover:bg-brand-secondary rounded-lg shadow-lg hover:shadow-xl hover:shadow-brand-primary/30 transform hover:scale-105 transition-all duration-300 overflow-hidden">
             <span className="relative z-10 tracking-wide">{t('button')}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           </button>

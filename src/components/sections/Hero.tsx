@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="max-w-5xl mx-auto text-center">
             {/* Headline */}
             <h1 
-              className={`text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-[1.1] tracking-tight font-heading mb-8 transition-all duration-1000 ${
+              className={`text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[1.1] tracking-tight font-heading mb-8 transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: '200ms' }}
@@ -39,7 +39,7 @@ export default function Hero() {
             
             {/* Subtitle */}
             <p 
-              className={`text-lg sm:text-xl lg:text-2xl text-white/95 leading-relaxed font-light font-body max-w-4xl mx-auto transition-all duration-1000 ${
+              className={`text-lg sm:text-xl lg:text-2xl text-white/95 leading-relaxed font-body max-w-4xl mx-auto transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: '400ms' }}
