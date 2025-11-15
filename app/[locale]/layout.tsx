@@ -30,6 +30,21 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <head>
+        {/* Favicon */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="/images/favicon.png"
+        />
+        <link
+          rel="shortcut icon"
+          type="image/png"
+          href="/images/favicon.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/favicon.png"
+        />
         {/* Preload critical fonts for better performance */}
         <link
           rel="preload"
