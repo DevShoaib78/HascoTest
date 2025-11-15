@@ -42,9 +42,8 @@ export default function Clients() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         {/* Section Title */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-title-lg md:text-title-xl mb-4 font-heading leading-tight">
-            <span className="text-gray-900">{t('heading')} </span>
-            <span className="text-brand-primary">{t('headingBrand')}</span>
+          <h2 className="text-title-lg md:text-title-xl mb-4 font-heading leading-tight text-brand-primary">
+            {t('heading')} {t('headingBrand')}
           </h2>
           <p className="text-body-md md:text-body-lg text-gray-600 max-w-3xl mx-auto font-body mb-6">
             {t('subtitle')}

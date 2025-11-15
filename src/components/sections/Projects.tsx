@@ -105,9 +105,8 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="text-title-lg md:text-title-xl leading-tight font-heading mb-4">
-            <span className="text-gray-900">{t('heading')} </span>
-            <span className="text-brand-primary">{t('headingBrand')}</span>
+          <h2 className="text-title-lg md:text-title-xl leading-tight font-heading mb-4 text-brand-primary">
+            {t('heading')} {t('headingBrand')}
           </h2>
           <p className="text-body-md md:text-body-lg text-gray-600 font-body max-w-3xl mx-auto mb-6">
             {t('subtitle')}

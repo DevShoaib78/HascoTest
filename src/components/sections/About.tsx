@@ -42,9 +42,8 @@ export default function About() {
         <div className="pl-4 sm:pl-6 lg:pl-8 pr-6 sm:pr-8 lg:pr-16">
           {/* Section Heading - Far Left */}
           <div className={`mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-title-lg md:text-title-xl leading-tight font-heading mb-4">
-              <span className="text-gray-900">{t('heading')} </span>
-              <span className="text-brand-primary">{t('headingBrand')}</span>
+            <h2 className="text-title-lg md:text-title-xl leading-tight font-heading mb-4 text-brand-primary">
+              {t('heading')} {t('headingBrand')}
             </h2>
             <div className={`w-24 h-1 bg-brand-primary rounded-full transition-all duration-1000 delay-300 ${isVisible ? 'scale-x-100' : 'scale-x-0'} ${locale === 'ar' ? 'origin-right' : 'origin-left'}`}></div>
           </div>
