@@ -27,11 +27,11 @@ export default function Clients() {
   }, [])
 
   const clients = [
-    { name: "neom", logoImage: "https://cms.hotelschool.nl/storage/media/neom-logo-png-saudi-arabia-PNG-Transparent-Images.png?v=1661515082" },
-    { name: "red-sea-global", logoImage: "https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Red_Sea_Global_Logo.svg/1200px-Red_Sea_Global_Logo.svg.png" },
-    { name: "amaala", logoImage: "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Amaala_Logo.svg/1200px-Amaala_Logo.svg.png" },
-    { name: "saudi-aramco", logoImage: "https://upload.wikimedia.org/wikipedia/de/thumb/a/a7/Saudi_Aramco_logo.svg/1200px-Saudi_Aramco_logo.svg.png?20200315105404" },
-    { name: "tronox", logoImage: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Tronox_logo.png" }
+    { name: "neom", logoImage: "/images/NEOM logo.png" },
+    { name: "red-sea-global", logoImage: "/images/Red Sead Global logo.png" },
+    { name: "amaala", logoImage: "/images/Amaala Logo.png" },
+    { name: "saudi-aramco", logoImage: "/images/Saudi Aramco Logo.png" },
+    { name: "tronox", logoImage: "/images/Tronox logo.png" }
   ]
 
   return (
