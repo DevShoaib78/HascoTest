@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hascogroup.com
+
+# Sitemaps
+Sitemap: https://hascogroup.com/sitemap.xml
