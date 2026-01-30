@@ -1,0 +1,279 @@
+{
+  "aboutPage": {
+    "hero": {
+      "title": "About HASCO Group",
+      "subtitle": "Excellence in integrated solutions across marine, logistics, and development sectors with 19+ years of proven expertise."
+    },
+    "story": {
+      "heading": "Our Story",
+      "paragraph1": "HASCO Group was established in 2005 to practice in the activities of integrated supply chain & logistics solutions.",
+      "paragraph2": "HASCO Group has created an active ecosystem of maritime and logistics services: from ship agency and marine operations to freight forwarding and hospitality services across the Middle East and beyond.",
+      "paragraph3": "With over 19 years of excellence in integrated supply chain and logistics solutions, HASCO Group stands as a trusted partner in Saudi Arabia's economic growth and development."
+    },
+    "stats": {
+      "years": {
+        "number": "19",
+        "suffix": "+",
+        "label": "Years of Excellence"
+      },
+      "projects": {
+        "number": "500",
+        "suffix": "+",
+        "label": "Projects Completed"
+      },
+      "team": {
+        "number": "50",
+        "suffix": "+",
+        "label": "Team Members"
+      },
+      "countries": {
+        "number": "15",
+        "suffix": "+",
+        "label": "Countries Served"
+      }
+    },
+    "services": {
+      "heading": "Our Core Services",
+      "shipAgency": {
+        "title": "Ship Agency",
+        "description": "Professional ship agency services providing comprehensive port operations and vessel handling with advanced maritime expertise."
+      },
+      "shipping": {
+        "title": "Shipping (NVOCC)",
+        "description": "Global shipping solutions and cargo management across international routes with comprehensive logistics support."
+      },
+      "marine": {
+        "title": "Marine Operations",
+        "description": "Comprehensive marine services including consultancy, operations, and professional diving with state-of-the-art equipment."
+      },
+      "hospitality": {
+        "title": "Hospitality",
+        "description": "High-quality hospitality, catering, and event management services with premium facilities and experienced coordinators."
+      }
+    },
+    "mission": {
+      "heading": "Our Mission",
+      "text": "To deliver exceptional integrated solutions across marine, logistics, and development sectors, fostering sustainable growth and innovation while maintaining the highest standards of service excellence."
+    },
+    "vision": {
+      "heading": "Our Vision",
+      "text": "To be the leading integrated solutions provider in the Middle East, recognized for our commitment to excellence, innovation, and sustainable development practices."
+    },
+    "cta": {
+      "heading": "Ready to Work With Us?",
+      "text": "Let's discuss how HASCO Group can support your next project with our comprehensive solutions and expertise.",
+      "button": "Get In Touch"
+    }
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "sectors": "Sectors",
+    "clients": "Clients",
+    "contact": "Contact",
+    "careers": "Careers",
+    "search": "Search",
+    "language": "عربي"
+  },
+  "hero": {
+    "title1": "Diversified Strength.",
+    "title2": "Unified Vision.",
+    "subtitle": "From marine expertise to logistics, construction, tourism, and beyond — HASCO delivers world-class solutions that power the Kingdom's growth and global ambitions."
+  },
+  "about": {
+    "heading": "About",
+    "headingBrand": "HASCO",
+    "description": "HASCO has grown from a focused logistics provider into a diversified holding group. Based in the Kingdom of Saudi Arabia, we operate across Marine, Logistics, Construction, Shipping, Tourism, Hospitality, and Consultancy, supporting the nation's transformation under Vision 2030.",
+    "button": "Learn More About Us"
+  },
+  "ceo": {
+    "name": "(CEO NAME HERE)",
+    "title": "Chief Executive Officer",
+    "heading": "A Message from Our CEO",
+    "note": "At HASCO, we believe in the power of integrated solutions. Our journey from a focused logistics provider to a diversified holding group reflects the Kingdom's own transformation. As Saudi Arabia strides boldly toward Vision 2030, we're honored to contribute our expertise across marine, logistics, construction, and beyond. Every project we undertake is a testament to our commitment to excellence and our faith in the Kingdom's future.",
+    "yearsLabel": "Years",
+    "sectorsLabel": "Sectors",
+    "projectsLabel": "Projects"
+  },
+  "sectors": {
+    "heading": "Sectors at a",
+    "headingBrand": "Glance",
+    "button": "Explore All Sectors",
+    "marine": {
+      "title": "Marine Operations",
+      "description": "Leading maritime services across the Red Sea, providing comprehensive marine consultancy, operations, and professional diving solutions."
+    },
+    "logistics": {
+      "title": "Logistics & Supply Chain",
+      "description": "Integrated logistics solutions with advanced freight forwarding, transportation management, and end-to-end supply chain optimization."
+    },
+    "construction": {
+      "title": "Construction",
+      "description": "Delivering world-class construction projects with unwavering commitment to safety, quality excellence, and sustainable building practices."
+    },
+    "hospitality": {
+      "title": "Hospitality & Events",
+      "description": "Premium hospitality services, exceptional catering experiences, and professional event management for memorable occasions."
+    },
+    "tourism": {
+      "title": "Tourism",
+      "description": "Pioneering tourism development and destination management services supporting the Kingdom's Vision 2030 tourism transformation."
+    },
+    "consultancy": {
+      "title": "Consultancy",
+      "description": "Strategic consultancy services delivering expert insights and innovative solutions across diverse industries and sectors."
+    }
+  },
+  "clients": {
+    "heading": "Trusted",
+    "headingBrand": "Partnerships",
+    "subtitle": "Collaborating with the Kingdom's most ambitious projects and leading organizations",
+    "statement": "Powering the Kingdom's Vision 2030 through strategic partnerships"
+  },
+  "projects": {
+    "heading": "Featured",
+    "headingBrand": "Projects",
+    "subtitle": "Discover how HASCO is contributing to Saudi Arabia's most ambitious development projects",
+    "neom": {
+      "title": "NEOM Marine Infrastructure",
+      "description": "Marine construction support for NEOM development",
+      "impact": "Supporting the world's most ambitious smart city project"
+    },
+    "amaala": {
+      "title": "AMAALA Logistics Hub",
+      "description": "Comprehensive logistics solutions for luxury tourism development",
+      "impact": "Enabling seamless operations for premium tourism destination"
+    },
+    "redSea": {
+      "title": "Red Sea Development Support",
+      "description": "Marine operations and facility management services",
+      "impact": "Supporting sustainable tourism development initiatives"
+    },
+    "cruise": {
+      "title": "Saudi Cruise Terminal",
+      "description": "Port operations and hospitality services for cruise tourism",
+      "impact": "Establishing Saudi Arabia as a premier cruise destination"
+    },
+    "previous": "Previous project",
+    "next": "Next project",
+    "goTo": "Go to project"
+  },
+  "stats": {
+    "years": {
+      "number": "20",
+      "suffix": "+",
+      "label": "Years of Excellence",
+      "description": "Delivering quality since 2005"
+    },
+    "sectors": {
+      "number": "7",
+      "suffix": "+",
+      "label": "Core Sectors",
+      "description": "Diversified expertise"
+    },
+    "projects": {
+      "number": "100",
+      "suffix": "+",
+      "label": "Projects Delivered",
+      "description": "Across the Kingdom"
+    }
+  },
+  "news": {
+    "heading": "Latest",
+    "headingBrand": "News",
+    "subtitle": "Stay updated with the latest developments, partnerships, and industry insights",
+    "item1": {
+      "date": "January 2025",
+      "title": "Red Sea Global secures SAR 6.5 billion funding for AMAALA",
+      "description": "Major investment milestone achieved for luxury tourism development project"
+    },
+    "item2": {
+      "date": "December 2024",
+      "title": "AMAALA Residences reveal new coastal masterplan",
+      "description": "Innovative design showcases sustainable luxury living on the Red Sea coast"
+    },
+    "item3": {
+      "date": "November 2024",
+      "title": "Logistics partnership announced for NEOM seaport expansion",
+      "description": "Strategic collaboration to enhance maritime infrastructure and operations"
+    },
+    "previous": "Previous news",
+    "next": "Next news",
+    "goTo": "Go to news"
+  },
+  "cta": {
+    "heading": "Partner with HASCO",
+    "description": "Join us in shaping the future of Saudi Arabia's development. Connect with our team to explore partnership opportunities.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "E-mail address",
+    "terms": "By submitting this form, you confirm that you have read and agreed to our",
+    "termsLink": "Terms and Conditions",
+    "and": "and",
+    "privacyLink": "Privacy Policy",
+    "submit": "Submit"
+  },
+  "destinations": {
+    "label": "OUR DESTINATIONS",
+    "subtitle": "HASCO operates across key strategic locations throughout the Kingdom of Saudi Arabia",
+    "locations": {
+      "magna": {
+        "name": "Magna",
+        "description": "Magna represents HASCO's presence in the northern Red Sea region, supporting development projects and marine operations in this emerging area. Our services include logistics coordination and marine consultancy for regional infrastructure projects."
+      },
+      "diba": {
+        "name": "Diba",
+        "description": "Located along the Red Sea coast, Diba is a key location for HASCO's marine and logistics operations, supporting coastal development and maritime activities in the region."
+      },
+      "alWajh": {
+        "name": "Al Wajh",
+        "description": "Al Wajh serves as a strategic gateway for HASCO's operations supporting NEOM and Red Sea development projects. We provide ship agency, marine operations, and comprehensive logistics solutions for this rapidly growing region."
+      },
+      "yanbu": {
+        "name": "Yanbu",
+        "description": "Yanbu is one of Saudi Arabia's most important industrial ports on the Red Sea. HASCO delivers full-spectrum port services, including ship agency, cargo handling, freight forwarding, and marine operations support for the petrochemical and industrial sectors."
+      },
+      "kap": {
+        "name": "KAP",
+        "description": "King Abdullah Port (KAP) is a major container port north of Jeddah. HASCO provides comprehensive maritime services, advanced logistics solutions, and strategic consultancy to support regional trade and economic growth."
+      },
+      "jeddah": {
+        "name": "Jeddah",
+        "description": "Jeddah is HASCO's flagship location and operational headquarters. As Saudi Arabia's premier commercial port on the Red Sea, we provide comprehensive maritime services, advanced logistics solutions, and strategic consultancy to support the Kingdom's trade and economic growth."
+      },
+      "jazan": {
+        "name": "Jazan",
+        "description": "Jazan Port serves the southern region of Saudi Arabia with vital industrial and commercial activities. HASCO offers ship agency, marine operations, and integrated logistics services supporting the Jazan Economic City and regional development initiatives."
+      },
+      "khafji": {
+        "name": "Khafji",
+        "description": "Khafji, located in the northeast near the Kuwaiti border, is an important oil and gas production area. HASCO supports offshore and onshore operations with specialized marine services, logistics coordination, and consultancy for the energy sector."
+      },
+      "rasAlKhair": {
+        "name": "Ras Al Khair",
+        "description": "Ras Al Khair is a major industrial hub on Saudi Arabia's eastern coast, home to one of the world's largest aluminum smelters and a vital port for mineral exports. HASCO provides comprehensive marine operations, logistics support, and port agency services to facilitate seamless industrial operations in this strategic location."
+      },
+      "dammam": {
+        "name": "Dammam",
+        "description": "Dammam, the capital of the Eastern Province, hosts King Abdul Aziz Port - one of the largest ports in the Arabian Gulf. HASCO provides comprehensive maritime services, freight forwarding, and supply chain solutions supporting the region's thriving industrial and commercial sectors."
+      }
+    }
+  },
+  "footer": {
+    "description": "Excellence in integrated solutions across marine, logistics, and development sectors. Powering Saudi Arabia's Vision 2030 with 20+ years of proven expertise.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "sectors": "Sectors",
+    "projects": "Projects",
+    "clients": "Clients",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "jeddah": "Jeddah, Al Safa",
+    "saudi": "Kingdom of Saudi Arabia",
+    "copyright": "© 2025 HASCO Group. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy"
+  }
+}
