@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/src/components/layout'
-import { Hero, About, CEO, Sectors, Clients, Projects, Stats, News, CTA, InteractiveMap } from '@/src/components/sections'
+import { Hero, About, CEO, Sectors, Clients, Projects, Stats, CTA, InteractiveMap } from '@/src/components/sections'
 import { SectionTransition } from '@/src/components/ui'
 
 export default function Home() {
@@ -50,17 +50,6 @@ export default function Home() {
         </div>
       </SectionTransition>
 
-      {/* Section 4: Clients & Partners Showcase */}
-      <SectionTransition
-        transitionType="reveal"
-        delay={400}
-        addDivider={false}
-      >
-        <div id="clients">
-          <Clients />
-        </div>
-      </SectionTransition>
-
       {/* Section 4.5: Interactive Map */}
       <SectionTransition
         transitionType="fade-in"
@@ -94,14 +83,14 @@ export default function Home() {
         </div>
       </SectionTransition>
 
-      {/* Section 7: Latest News (after stats) */}
+      {/* Section 7: Trusted Partnerships (after stats) */}
       <SectionTransition
         transitionType="slide-up"
         delay={550}
         addDivider={false}
       >
-        <div id="latest-news">
-          <News />
+        <div id="clients">
+          <Clients />
         </div>
       </SectionTransition>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Linkedin, Twitter, Facebook, Instagram, Youtube, MapPin, Mail, Phone, Home, Info, Briefcase, Users, MessageCircle, FolderOpen } from 'lucide-react'
+import { Linkedin, Twitter, Facebook, Instagram, Youtube, MapPin, Mail, Phone, Home, Info, Briefcase, Users, MessageCircle, GraduationCap } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 
 export default function Footer() {
@@ -20,9 +20,9 @@ export default function Footer() {
     { key: 'home', href: `/${locale}`, icon: Home },
     { key: 'about', href: `/${locale}/about`, icon: Info },
     { key: 'sectors', href: `/${locale}/sectors`, icon: Briefcase },
-    { key: 'projects', href: `/${locale}/projects`, icon: FolderOpen },
     { key: 'clients', href: `/${locale}/clients`, icon: Users },
-    { key: 'contact', href: `/${locale}/contact`, icon: MessageCircle }
+    { key: 'contact', href: `/${locale}/contact`, icon: MessageCircle },
+    { key: 'careers', href: `/${locale}/careers`, icon: GraduationCap }
   ]
 
   return (
@@ -113,14 +113,11 @@ export default function Footer() {
               {t('copyright')}
             </div>
             <div className="flex flex-wrap justify-center gap-4 text-xs font-body">
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300">
+              <a href={`/${locale}/privacy`} className="text-white/70 hover:text-white transition-colors duration-300">
                 {t('privacy')}
               </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300">
+              <a href={`/${locale}/terms`} className="text-white/70 hover:text-white transition-colors duration-300">
                 {t('terms')}
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors duration-300">
-                {t('cookies')}
               </a>
             </div>
           </div>

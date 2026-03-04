@@ -93,6 +93,7 @@ export default async function LocaleLayout({
               ],
               contactPoint: {
                 '@type': 'ContactPoint',
+                telephone: '+966-12-642-5834',
                 contactType: 'Customer Service',
                 availableLanguage: ['en', 'ar'],
               },

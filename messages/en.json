@@ -65,6 +65,212 @@
       "button": "Get In Touch"
     }
   },
+  "sectorsPage": {
+    "hero": {
+      "title": "Our Sectors",
+      "subtitle": "Six specialized divisions working in unison to deliver integrated solutions across the Kingdom and beyond."
+    },
+    "intro": {
+      "heading": "Diversified Expertise",
+      "text": "From the Red Sea coast to the Arabian Gulf, HASCO's six core sectors form an interconnected ecosystem. Each division draws on shared capabilities and deep local knowledge to deliver outcomes that stand apart."
+    },
+    "tourismEvents": {
+      "title": "Tourism & Events",
+      "description": "HASCO is at the forefront of Saudi Arabia's tourism revolution, supporting destination development and delivering world-class event experiences across the Kingdom's most iconic venues and emerging destinations.",
+      "feature1": "Destination management and tourism development",
+      "feature2": "Large-scale event planning and execution",
+      "feature3": "Festival and cultural event coordination",
+      "feature4": "Visitor experience design and operations"
+    },
+    "hospitality": {
+      "title": "Hospitality",
+      "description": "From remote project camps to luxury resort support, HASCO delivers premium hospitality and catering services that set the standard for guest experiences in even the most challenging environments.",
+      "feature1": "Premium catering and food services",
+      "feature2": "Camp management and accommodation",
+      "feature3": "VIP guest services and concierge",
+      "feature4": "Remote site hospitality for mega-projects"
+    },
+    "construction": {
+      "title": "Construction",
+      "description": "HASCO's construction division delivers infrastructure, civil works, and facility construction for some of the Kingdom's most ambitious development projects, from coastal resorts to industrial complexes.",
+      "feature1": "Infrastructure development and civil works",
+      "feature2": "Project management and general contracting",
+      "feature3": "Temporary and permanent facility construction",
+      "feature4": "Quality assurance and safety compliance"
+    },
+    "supplyChain": {
+      "title": "Supply Chain",
+      "description": "Our end-to-end supply chain management ensures the right materials arrive at the right place, at the right time. We handle everything from procurement and warehousing to distribution across the Kingdom.",
+      "feature1": "Procurement and vendor management",
+      "feature2": "Warehousing and inventory control",
+      "feature3": "Distribution and last-mile delivery",
+      "feature4": "Supply chain optimization and analytics"
+    },
+    "marine": {
+      "title": "Marine",
+      "description": "HASCO's maritime expertise spans the Red Sea and Arabian Gulf, providing critical ship agency, marine consultancy, and professional diving services that keep port operations and offshore projects running smoothly.",
+      "feature1": "Ship agency and port operations",
+      "feature2": "Marine consultancy and surveys",
+      "feature3": "Professional commercial diving",
+      "feature4": "Offshore and onshore marine support"
+    },
+    "logistics": {
+      "title": "Logistics",
+      "description": "Connecting Saudi Arabia to global trade networks, HASCO's logistics division provides freight forwarding, customs brokerage, and transportation management with the precision and reliability that major projects demand.",
+      "feature1": "Freight forwarding — air, sea, and land",
+      "feature2": "Customs brokerage and clearance",
+      "feature3": "Transportation management",
+      "feature4": "NVOCC shipping solutions"
+    },
+    "cta": {
+      "heading": "Need Sector-Specific Solutions?",
+      "text": "Whether it's a single sector or an integrated multi-sector engagement, HASCO has the expertise to deliver. Let's discuss your requirements.",
+      "button": "Contact Our Team"
+    }
+  },
+  "clientsPage": {
+    "hero": {
+      "title": "Our Clients & Partners",
+      "subtitle": "Trusted by the Kingdom's most ambitious projects and leading organizations to deliver excellence at scale."
+    },
+    "intro": {
+      "heading": "Strategic Partnerships",
+      "text": "HASCO's client relationships are built on trust, performance, and shared ambition. We are proud to support organizations that are shaping the future of Saudi Arabia under Vision 2030."
+    },
+    "neom": {
+      "name": "NEOM",
+      "description": "Supporting the world's most ambitious smart city with marine infrastructure, logistics coordination, and comprehensive port operations along the NEOM coastline.",
+      "scope": "Marine Infrastructure & Logistics"
+    },
+    "redSeaGlobal": {
+      "name": "Red Sea Global",
+      "description": "Enabling sustainable luxury tourism through integrated maritime services, hospitality support, and supply chain management for the Red Sea development.",
+      "scope": "Maritime & Hospitality Services"
+    },
+    "amaala": {
+      "name": "AMAALA",
+      "description": "Delivering comprehensive logistics and operational support for the ultra-luxury coastal destination, ensuring seamless construction and development progress.",
+      "scope": "Logistics & Operational Support"
+    },
+    "saudiAramco": {
+      "name": "Saudi Aramco",
+      "description": "Providing marine operations, supply chain solutions, and specialized logistics services for the world's leading energy company across key Saudi ports.",
+      "scope": "Marine & Supply Chain Solutions"
+    },
+    "tronox": {
+      "name": "Tronox",
+      "description": "Supporting mineral operations with port logistics, marine services, and supply chain management at Ras Al Khair and other strategic industrial locations.",
+      "scope": "Port Logistics & Marine Services"
+    },
+    "partnership": {
+      "heading": "Powering Vision 2030",
+      "text": "Every partnership we enter is a commitment to the Kingdom's future. Our clients trust us because we deliver — on time, on budget, and to the highest standards.",
+      "stat1Label": "Active Clients",
+      "stat1Value": "50",
+      "stat2Label": "Projects Delivered",
+      "stat2Value": "100",
+      "stat3Label": "Sectors Served",
+      "stat3Value": "6"
+    },
+    "cta": {
+      "heading": "Become a Partner",
+      "text": "Join the roster of organizations that trust HASCO to deliver. Let's explore how we can support your next project.",
+      "button": "Start a Conversation"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Get In Touch",
+      "subtitle": "Whether you have a question, a project in mind, or want to explore partnership opportunities — we're here to help."
+    },
+    "form": {
+      "heading": "Send Us a Message",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "subjectGeneral": "General Inquiry",
+      "subjectPartnership": "Partnership Opportunity",
+      "subjectMarine": "Marine Services",
+      "subjectLogistics": "Logistics & Supply Chain",
+      "subjectConstruction": "Construction",
+      "subjectTourism": "Tourism & Events",
+      "subjectHospitality": "Hospitality",
+      "subjectCareers": "Careers",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you! Your message has been sent. Our team will get back to you shortly."
+    },
+    "info": {
+      "heading": "Contact Information",
+      "headquarters": "HASCO Headquarters",
+      "address": "Al Safa District, Jeddah",
+      "country": "Kingdom of Saudi Arabia",
+      "phone": "+966 12 642 5834",
+      "email": "info@hasco.com.sa",
+      "hours": "Working Hours",
+      "hoursValue": "Sunday – Thursday, 8:00 AM – 5:00 PM",
+      "followUs": "Follow Us"
+    },
+    "offices": {
+      "heading": "Our Offices Across the Kingdom",
+      "text": "HASCO maintains a strategic presence at key ports and industrial zones throughout Saudi Arabia, ensuring responsive service wherever our clients operate."
+    }
+  },
+  "careersPage": {
+    "hero": {
+      "title": "Careers at HASCO",
+      "subtitle": "Be part of the team building Saudi Arabia's future. Join a company where your work shapes mega-projects and drives Vision 2030."
+    },
+    "why": {
+      "heading": "Why HASCO?",
+      "text": "At HASCO, you don't just fill a role — you contribute to projects that are redefining the Kingdom. From NEOM's coastline to the Red Sea's luxury resorts, our people are at the heart of Saudi Arabia's transformation.",
+      "benefit1Title": "Work on Mega-Projects",
+      "benefit1Desc": "Contribute directly to NEOM, Red Sea Global, AMAALA, and other Vision 2030 developments that are shaping the world.",
+      "benefit2Title": "Growth & Development",
+      "benefit2Desc": "Access structured career paths, training programs, and mentorship from industry leaders across six specialized sectors.",
+      "benefit3Title": "Diverse & Dynamic",
+      "benefit3Desc": "Work alongside a multinational team across marine, logistics, construction, hospitality, tourism, and supply chain sectors.",
+      "benefit4Title": "Competitive Rewards",
+      "benefit4Desc": "Enjoy competitive compensation, comprehensive benefits, and the opportunity to grow with a rapidly expanding organization."
+    },
+    "openings": {
+      "heading": "Current Openings",
+      "text": "We're always looking for talented professionals who share our drive for excellence.",
+      "position1Title": "Marine Operations Manager",
+      "position1Location": "Jeddah",
+      "position1Type": "Full-time",
+      "position1Sector": "Marine",
+      "position2Title": "Logistics Coordinator",
+      "position2Location": "NEOM",
+      "position2Type": "Full-time",
+      "position2Sector": "Logistics",
+      "position3Title": "Site Engineer",
+      "position3Location": "Red Sea",
+      "position3Type": "Full-time",
+      "position3Sector": "Construction",
+      "position4Title": "Hospitality Supervisor",
+      "position4Location": "AMAALA",
+      "position4Type": "Full-time",
+      "position4Sector": "Hospitality",
+      "position5Title": "Supply Chain Analyst",
+      "position5Location": "Dammam",
+      "position5Type": "Full-time",
+      "position5Sector": "Supply Chain",
+      "position6Title": "Tourism Experience Coordinator",
+      "position6Location": "Al Wajh",
+      "position6Type": "Full-time",
+      "position6Sector": "Tourism & Events",
+      "applyButton": "Apply Now"
+    },
+    "cta": {
+      "heading": "Don't See Your Role?",
+      "text": "We're always interested in exceptional talent. Send us your CV and we'll reach out when the right opportunity arises.",
+      "button": "Send Your CV",
+      "email": "careers@hasco.com.sa"
+    }
+  },
   "header": {
     "home": "Home",
     "about": "About",
@@ -87,7 +293,7 @@
     "button": "Learn More About Us"
   },
   "ceo": {
-    "name": "(CEO NAME HERE)",
+    "name": "Hasan Alharbi",
     "title": "Chief Executive Officer",
     "heading": "A Message from Our CEO",
     "note": "At HASCO, we believe in the power of integrated solutions. Our journey from a focused logistics provider to a diversified holding group reflects the Kingdom's own transformation. As Saudi Arabia strides boldly toward Vision 2030, we're honored to contribute our expertise across marine, logistics, construction, and beyond. Every project we undertake is a testament to our commitment to excellence and our faith in the Kingdom's future.",
@@ -100,28 +306,28 @@
     "headingBrand": "Glance",
     "button": "Explore All Sectors",
     "marine": {
-      "title": "Marine Operations",
-      "description": "Leading maritime services across the Red Sea, providing comprehensive marine consultancy, operations, and professional diving solutions."
+      "title": "Marine",
+      "description": "Leading maritime services across the Red Sea and Arabian Gulf, providing comprehensive marine consultancy, vessel operations, and professional diving solutions."
     },
     "logistics": {
-      "title": "Logistics & Supply Chain",
-      "description": "Integrated logistics solutions with advanced freight forwarding, transportation management, and end-to-end supply chain optimization."
+      "title": "Logistics",
+      "description": "Advanced freight forwarding, transportation management, and port operations connecting Saudi Arabia to global trade networks with precision and reliability."
     },
     "construction": {
       "title": "Construction",
       "description": "Delivering world-class construction projects with unwavering commitment to safety, quality excellence, and sustainable building practices."
     },
     "hospitality": {
-      "title": "Hospitality & Events",
-      "description": "Premium hospitality services, exceptional catering experiences, and professional event management for memorable occasions."
+      "title": "Hospitality",
+      "description": "Premium hospitality and catering services delivering exceptional guest experiences across the Kingdom's most prestigious venues and facilities."
     },
     "tourism": {
-      "title": "Tourism",
-      "description": "Pioneering tourism development and destination management services supporting the Kingdom's Vision 2030 tourism transformation."
+      "title": "Tourism & Events",
+      "description": "Pioneering tourism development and world-class event management, supporting Saudi Arabia's Vision 2030 tourism transformation and delivering unforgettable experiences."
     },
     "consultancy": {
-      "title": "Consultancy",
-      "description": "Strategic consultancy services delivering expert insights and innovative solutions across diverse industries and sectors."
+      "title": "Supply Chain",
+      "description": "End-to-end supply chain management covering procurement, warehousing, inventory control, and distribution to keep operations running seamlessly across the Kingdom."
     }
   },
   "clients": {
@@ -166,7 +372,7 @@
       "description": "Delivering quality since 2005"
     },
     "sectors": {
-      "number": "7",
+      "number": "6",
       "suffix": "+",
       "label": "Core Sectors",
       "description": "Diversified expertise"
@@ -214,7 +420,7 @@
     "submit": "Submit"
   },
   "destinations": {
-    "label": "OUR DESTINATIONS",
+    "label": "HASCO OFFICES",
     "subtitle": "HASCO operates across key strategic locations throughout the Kingdom of Saudi Arabia",
     "locations": {
       "magna": {
@@ -265,9 +471,9 @@
     "home": "Home",
     "about": "About",
     "sectors": "Sectors",
-    "projects": "Projects",
     "clients": "Clients",
     "contact": "Contact",
+    "careers": "Careers",
     "contactUs": "Contact Us",
     "jeddah": "Jeddah, Al Safa",
     "saudi": "Kingdom of Saudi Arabia",

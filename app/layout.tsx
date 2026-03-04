@@ -61,10 +61,6 @@ export const metadata: Metadata = {
     images: ['/images/og-image.jpg'],
     creator: '@hascogroup',
   },
-  verification: {
-    google: 'google-site-verification-code',
-    yandex: 'yandex-verification-code',
-  },
   alternates: {
     canonical: siteUrl,
     languages: {

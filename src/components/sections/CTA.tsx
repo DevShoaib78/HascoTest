@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 
 export default function CTA() {
   const t = useTranslations('cta')
+  const locale = useLocale()
   const [isVisible, setIsVisible] = useState(false)
   const [formData, setFormData] = useState({
     firstName: '',
@@ -32,10 +33,14 @@ export default function CTA() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement form submission to your backend API
-    // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-    // For now, the form data is available in the formData state
-    // You can integrate with your CRM, email service, or database here
+    const message = [
+      `*HASCO Form Submission*`,
+      ``,
+      `*First Name:* ${formData.firstName}`,
+      `*Last Name:* ${formData.lastName}`,
+      `*Email:* ${formData.email}`,
+    ].join('\n')
+    window.open(`https://wa.me/966126425834?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -100,9 +105,9 @@ export default function CTA() {
 
                 <p className="text-xs text-gray-500 font-body">
                   {t('terms')}{' '}
-                  <a href="#" className="text-brand-primary hover:underline">{t('termsLink')}</a>
+                  <a href={`/${locale}/terms`} className="text-brand-primary hover:underline">{t('termsLink')}</a>
                   {' '}{t('and')}{' '}
-                  <a href="#" className="text-brand-primary hover:underline">{t('privacyLink')}</a>.
+                  <a href={`/${locale}/privacy`} className="text-brand-primary hover:underline">{t('privacyLink')}</a>.
                 </p>
 
                 <button

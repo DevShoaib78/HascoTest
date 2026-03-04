@@ -28,7 +28,7 @@ export default function Stats() {
 
   const stats = [
     { number: 20, suffix: t('years.suffix'), label: t('years.label'), description: t('years.description') },
-    { number: 7, suffix: t('sectors.suffix'), label: t('sectors.label'), description: t('sectors.description') },
+    { number: 6, suffix: t('sectors.suffix'), label: t('sectors.label'), description: t('sectors.description') },
     { number: 100, suffix: t('projects.suffix'), label: t('projects.label'), description: t('projects.description') }
   ]
 
