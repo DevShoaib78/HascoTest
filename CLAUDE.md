@@ -28,12 +28,10 @@ This document is the single source of truth for any AI agent (Claude or otherwis
 │   ├── [locale]/               # Dynamic locale routing (en / ar)
 │   │   ├── page.tsx            # Home page — imports all sections
 │   │   ├── about/page.tsx      # Full about page (story, stats, services, mission/vision)
-│   │   ├── sectors/page.tsx    # Sectors page (6 sectors, zigzag image+content layout)
+│   │   ├── sectors/page.tsx    # Sectors page (6 sectors zigzag + Featured Projects carousel + CTA)
 │   │   ├── clients/page.tsx    # Clients page (5 client cards + stats + CTA)
 │   │   ├── contact/page.tsx    # Contact page (form + info sidebar + offices grid)
 │   │   ├── careers/page.tsx    # Careers page (why HASCO + openings + CTA)
-│   │   ├── terms/page.tsx      # Terms & Conditions (bilingual, hardcoded EN/AR content)
-│   │   ├── privacy/page.tsx    # Privacy Policy (bilingual, hardcoded EN/AR content)
 │   │   └── layout.tsx          # Locale layout: i18n provider + splash + Lenis
 │   ├── globals.css             # Global base styles, fonts
 │   ├── layout.tsx              # Root layout: SEO metadata, structured data
@@ -44,19 +42,19 @@ This document is the single source of truth for any AI agent (Claude or otherwis
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Header.tsx      # Sticky nav, mobile menu, language toggle
-│   │   │   └── Footer.tsx      # Links, social icons, contact info
+│   │   │   └── Footer.tsx      # Links, social icons, contact info (no terms/privacy links)
 │   │   ├── sections/           # All homepage section components
 │   │   │   ├── Hero.tsx
-│   │   │   ├── About.tsx
+│   │   │   ├── About.tsx       # bg: globe.webp
 │   │   │   ├── CEO.tsx
 │   │   │   ├── Sectors.tsx     # Auto-scrolling carousel (6 sectors)
 │   │   │   ├── Clients.tsx     # Logo grid (5 clients) — also used as home section
 │   │   │   ├── InteractiveMap.tsx  # Leaflet map, 10 Saudi locations
 │   │   │   ├── MapController.tsx
-│   │   │   ├── Projects.tsx    # Horizontal scrolling carousel
+│   │   │   ├── Projects.tsx    # Infinite auto-scrolling carousel (12 projects, 2 per sector)
 │   │   │   ├── Stats.tsx       # Animated counters
-│   │   │   ├── News.tsx        # Removed from home; kept as component
-│   │   │   └── CTA.tsx         # Contact form (firstName, lastName, email)
+│   │   │   ├── News.tsx        # Removed from home; kept as component (unused)
+│   │   │   └── CTA.tsx         # Contact form (firstName, lastName, email) — no T&C disclaimer
 │   │   ├── ui/
 │   │   │   ├── SectionTransition.tsx   # Scroll-triggered animation wrapper
 │   │   │   ├── AnimatedCounter.tsx     # Eased number animation
@@ -74,8 +72,10 @@ This document is the single source of truth for any AI agent (Claude or otherwis
 │
 ├── public/images/              # Static assets: logos, backgrounds, CEO portrait
 │   ├── hascowhite.png / hascoblue.png
-│   ├── ceo-portrait.png
-│   ├── hero.jpeg, skyline1-3.jpg, skyline7.webp   # Hero/page backgrounds
+│   ├── favicon.png             # Used for favicon + apple-touch-icon (og-image.jpg deleted)
+│   ├── hero.jpeg               # Used as OG/Twitter card social preview image
+│   ├── herobg.webp, globe.webp, globe.svg
+│   ├── saudi1.jpg, saudi2.webp, saudi3.jpg  # Page hero backgrounds
 │   ├── Slide5.jpeg, construction-site.png, reception.png, talk.png, truck.png
 │   └── [Client logos] NEOM, Amaala, Red Sea Global, Saudi Aramco, Tronox
 │
@@ -137,9 +137,9 @@ All inner pages follow this structure — reference `about/page.tsx` as the cano
 - Whitelisted external domains in `next.config.js`: `images.unsplash.com`, `eu-images.contentstack.com`, `d3q0fpse3wbo5h.cloudfront.net`, `i0.wp.com`, `server.arcgisonline.com`
 
 ### 5. SEO
-- Structured data (Organization JSON-LD) in root layout
-- Open Graph + Twitter card metadata
-- `sitemap.ts` generates XML sitemap
+- Structured data (Organization JSON-LD) in locale layout
+- Open Graph + Twitter card metadata — OG image: `public/images/hero.jpeg`
+- `sitemap.ts` generates XML sitemap (6 pages × 2 locales = 12 entries)
 - Canonical URLs and hreflang alternate links
 
 ---
@@ -147,20 +147,20 @@ All inner pages follow this structure — reference `about/page.tsx` as the cano
 ## Pages & Sections
 
 ### Home (`/[locale]/`)
-Sections in order: **Hero → About → CEO → Sectors → InteractiveMap → Projects → Stats → Trusted Partnerships (Clients) → CTA**
+Sections in order: **Hero → About → CEO → Sectors → InteractiveMap → Stats → Clients → CTA**
 
-> Note: `News` section was removed from home. `Clients` section moved to after Stats.
+> Note: `News` section removed from home. `Projects` section moved to Sectors page. `Clients` section after Stats.
 
 ### Inner Pages
 | Route | Status | Notes |
 |-------|--------|-------|
 | `/about` | ✅ Complete | Story, stats, services, mission/vision, CTA |
-| `/sectors` | ✅ Complete | 6 sectors, zigzag image+content, feature lists |
+| `/sectors` | ✅ Complete | 6 sectors zigzag layout + Featured Projects carousel at bottom + CTA |
 | `/clients` | ✅ Complete | 5 client cards (alternating layout), animated stats, CTA |
 | `/contact` | ✅ Complete | CSS gradient hero, form → WhatsApp redirect, info sidebar, offices grid |
 | `/careers` | ✅ Complete | 4 benefit cards (bg icon watermark), 6 job listings, Send CV → Gmail |
-| `/terms` | ✅ Complete | 9-section T&C, bilingual hardcoded content, minimal CSS hero |
-| `/privacy` | ✅ Complete | 9-section Privacy Policy, bilingual hardcoded content, minimal CSS hero |
+| `/terms` | ❌ DELETED | Removed per client request |
+| `/privacy` | ❌ DELETED | Removed per client request |
 
 ### The 6 Sectors (current)
 Order in carousel and Sectors page:
@@ -172,6 +172,29 @@ Order in carousel and Sectors page:
 6. Logistics
 
 > **Important:** The Supply Chain sector uses the translation key `sectors.consultancy` in both `en.json` and `ar.json`. Do not rename the key — just update the value content if needed.
+
+---
+
+## Featured Projects Carousel (`Projects.tsx`)
+
+- **Location:** Sectors page only (`/sectors`) — removed from home page
+- **Type:** Infinite auto-scrolling carousel (CSS transform, tripled array for seamless loop)
+- **Auto-scroll:** Every 3 seconds, pauses on hover, resumes 6s after manual navigation
+- **Cards:** 3 visible on desktop, 2 on tablet, 1 on mobile (computed via ResizeObserver)
+- **Navigation:** Prev/Next arrows + dot indicators (both functional, RTL-aware)
+- **Background:** `bg-gray-50`
+- **12 projects total (2 per sector):**
+
+| Sector | Projects (translation keys) |
+|--------|---------------------------|
+| Marine | `neom`, `arabianGulf` |
+| Logistics | `amaala`, `jeddahPort` |
+| Tourism & Events | `redSea`, `diriyah` |
+| Hospitality | `cruise`, `alula` |
+| Construction | `neomConstruction`, `jeddahDistrict` |
+| Supply Chain | `aramcoSupply`, `nationalDistrib` |
+
+> **Images** are hardcoded external URLs in the `baseProjects` array in `Projects.tsx`. To swap an image, update the `image` field for that project directly in the component. Sector labels (`sector` field) are also hardcoded inline (EN/AR via `isRtl`).
 
 ---
 
@@ -189,12 +212,14 @@ Both `messages/en.json` and `messages/ar.json` contain these top-level keys:
 - `ceo` — CEO section (name: "Hasan Alharbi")
 - `sectors` — Home sectors carousel (6 sectors)
 - `clients` — Home clients section heading
-- `projects` — Home projects carousel
+- `projects` — Featured projects carousel (12 project entries + UI labels)
 - `stats` — Home stats section (20+, 6+, 100+)
-- `news` — Unused on home; kept for future
+- `news` — Unused; kept for future
 - `cta` — Home contact form section
 - `destinations` — Interactive map section (label: "HASCO OFFICES")
 - `footer` — Footer content
+
+> **Note:** Orphaned keys remain in both JSON files: `cta.terms`, `cta.termsLink`, `cta.privacyLink`, `footer.terms`, `footer.privacy`, `footer.cookies` — leftovers from deleted pages. They are unused and harmless but can be cleaned up.
 
 ---
 
@@ -234,61 +259,57 @@ npm run lint     # ESLint check
 
 ---
 
-## Recent Changes & Current Status
+## Current Status & Session History
 
-> **Last updated:** 2026-03-05
-> **Branch:** `master` (single branch so far; `main` is the target for PRs)
+> **Last updated:** 2026-03-12
+> **Branch:** `main`
 
-### Current Status: Active Development — Session 3 Complete
+### Current Status: Active Development — Session 4 Complete
 
 ### Changes Made (Session 1 — initial content updates)
 - CEO name updated to **"Hasan Alharbi"** (EN) / **"حسن الحربي"** (AR)
 - Map section label changed from "Our Destinations" → **"HASCO Offices"** / **"مكاتب هاسكو"**
-- Stats: Core Sectors changed from `7+` → **`6+`** (fixed in both `en.json`, `ar.json`, and hardcoded value in `Stats.tsx`)
-- Home page restructured: **News section removed**, **Clients (Trusted Partnerships) moved** to after Stats
-- Sectors carousel updated:
-  - New order: Tourism & Events, Hospitality, Construction, Supply Chain, Marine, Logistics
-  - `consultancy` key repurposed → Supply Chain content
-  - New supply chain image (`photo-1586528116311`)
-  - All sector titles and descriptions updated in both languages
+- Stats: Core Sectors changed from `7+` → **`6+`**
+- Home page restructured: News section removed, Clients moved to after Stats
+- Sectors carousel order updated; `consultancy` key repurposed → Supply Chain
 
 ### Changes Made (Session 2 — inner pages built)
-- **Sectors page** (`/sectors`): Full page with hero, intro, 6 alternating zigzag image+content blocks with feature checklists. Image overlays and icon badges subsequently removed per client feedback.
-- **Clients page** (`/clients`): Full page with hero, intro, 5 client cards (logo + scope tag + description), animated stats section, CTA.
-- **Contact page** (`/contact`): Full page with hero, contact form (8 subject options), sticky info sidebar, 6-city offices grid.
-- **Careers page** (`/careers`): Full page with hero, 4 benefit cards (Why HASCO), 6 job listings with location/type/sector, dark gradient CTA.
-- Translation keys added for all 4 pages in both `en.json` and `ar.json`.
-- Build verified clean: all 16 routes (6 pages × 2 locales) generate successfully.
+- Sectors, Clients, Contact, Careers pages built
+- Translation keys added for all 4 pages
 
 ### Changes Made (Session 3 — polish, forms, SEO)
-- **Clients page**: Stats "Sectors Served" now shows `6+`; client cards alternate logo-left/logo-right layout; logos enlarged (`w-56 h-32`)
-- **Contact page**: Form fields fixed with `bg-white` (were dark from browser dark mode); hero replaced with CSS gradient + dot grid + decorative circles (no image); form submits → WhatsApp `wa.me/966126425834` with `*bold*` formatted message header "HASCO Form Submission"
-- **Home CTA form** (`CTA.tsx`): submits → WhatsApp redirect with same format
-- **Terms & Conditions page** (`/terms`): created, bilingual, 9 sections, minimal CSS hero
-- **Privacy Policy page** (`/privacy`): created, bilingual, 9 sections, minimal CSS hero
-- **Footer**: Quick links updated (Projects → Careers); Privacy/Terms bottom links now point to real pages
-- **Careers page**: Benefit card icons moved to bg watermark (`opacity-[0.15]`); "Send Your CV" → Gmail compose link
-- **SEO**: `/terms` + `/privacy` added to sitemap; placeholder Google/Yandex verification codes removed; `telephone` added to JSON-LD ContactPoint
+- Clients, Contact, Careers pages polished
+- Terms & Privacy pages created (later deleted in Session 4)
+- Forms wired to WhatsApp/Gmail
+- Footer updated
+
+### Changes Made (Session 4 — current)
+- **About section bg** changed from `Slide5.jpeg` → `globe.webp`
+- **Featured Projects** (`Projects.tsx`) moved from home page → end of Sectors page
+- **Projects carousel** fully rewritten: infinite auto-scroll, 12 projects (2/sector), white bg, brand-compliant heading, RTL-aware arrows
+- **Terms & Privacy pages** deleted entirely
+- **CTA.tsx** disclaimer line removed (no more T&C/Privacy reference)
+- **Footer** Privacy/Terms bottom links removed; copyright now centered
+- **Sitemap** updated: `/terms` and `/privacy` removed
+- **SEO fixes**: OG image updated from deleted `og-image.jpg` → `hero.jpeg`; favicon references cleaned up (removed dead `/favicon.ico` and `/apple-touch-icon.png` — both now point to existing `/images/favicon.png`)
 
 ### What's Pending / Known TODOs
-- [ ] Careers "Apply Now" buttons on job listings — non-functional (no action yet)
-- [ ] News section content — `News.tsx` component exists but is unused on home and has no dedicated page
+- [ ] Careers "Apply Now" buttons — non-functional (no action yet)
+- [ ] News section — `News.tsx` exists but unused, no dedicated page
 - [ ] Deploy to production (Vercel recommended)
 - [ ] Add Google Search Console + Yandex Webmaster verification codes to `app/layout.tsx` once available
 - [ ] Supabase integration (installed, zero code) — forms currently use WhatsApp redirect
-- [ ] `sizes` prop missing on `fill` images in clients, sectors, careers pages (performance — Next.js warning)
+- [ ] `sizes` prop missing on `fill` images in clients, sectors, careers pages (Next.js perf warning)
+- [ ] Orphaned translation keys cleanup: `cta.terms`, `cta.termsLink`, `cta.privacyLink`, `footer.terms`, `footer.privacy`, `footer.cookies`
+- [ ] `app/not-found.tsx` links to `/` (always EN) — should be locale-aware
 
 ### Form Submission Behaviour (important)
-- **Home CTA form** (`CTA.tsx`): submits → opens WhatsApp `wa.me/966126425834` with formatted message
-- **Contact page form** (`contact/page.tsx`): submits → opens WhatsApp `wa.me/966126425834` with formatted message
+- **Home CTA form** (`CTA.tsx`): submits → WhatsApp `wa.me/966126425834` with `*HASCO Form Submission*` header
+- **Contact page form** (`contact/page.tsx`): submits → WhatsApp `wa.me/966126425834` with formatted message
 - **Careers "Send Your CV"**: opens Gmail compose to `careers@hasco.com.sa`
+- **Careers "Apply Now"**: non-functional
 - No API routes exist; no Supabase calls wired up
 
 ### Footer Quick Links (current)
 Home · About · Sectors · Clients · Contact · Careers
-(Projects link removed; Careers added)
-
-### Active Work
-_(Update this section whenever starting a new feature or fix)_
-
-Session 3 complete. All pages finalized, SEO cleaned up, forms wired to WhatsApp/Gmail.
+(No Terms or Privacy links anywhere in the site)

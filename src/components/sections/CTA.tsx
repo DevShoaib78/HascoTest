@@ -103,13 +103,6 @@ export default function CTA() {
                   required
                 />
 
-                <p className="text-xs text-gray-500 font-body">
-                  {t('terms')}{' '}
-                  <a href={`/${locale}/terms`} className="text-brand-primary hover:underline">{t('termsLink')}</a>
-                  {' '}{t('and')}{' '}
-                  <a href={`/${locale}/privacy`} className="text-brand-primary hover:underline">{t('privacyLink')}</a>.
-                </p>
-
                 <button
                   type="submit"
                   className="w-full md:w-auto px-8 py-3 bg-brand-primary hover:bg-brand-secondary text-white font-heading rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-brand-primary/30"

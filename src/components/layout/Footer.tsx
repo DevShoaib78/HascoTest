@@ -108,17 +108,9 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-white/20 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+          <div className="flex justify-center items-center">
             <div className="text-white/70 text-xs font-body">
               {t('copyright')}
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 text-xs font-body">
-              <a href={`/${locale}/privacy`} className="text-white/70 hover:text-white transition-colors duration-300">
-                {t('privacy')}
-              </a>
-              <a href={`/${locale}/terms`} className="text-white/70 hover:text-white transition-colors duration-300">
-                {t('terms')}
-              </a>
             </div>
           </div>
         </div>

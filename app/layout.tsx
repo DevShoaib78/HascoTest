@@ -29,12 +29,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/images/favicon.png', sizes: 'any' },
-      { url: '/favicon.ico', sizes: 'any' },
     ],
     shortcut: '/images/favicon.png',
     apple: [
-      { url: '/images/favicon.png' },
-      { url: '/apple-touch-icon.png', sizes: '180x180' },
+      { url: '/images/favicon.png', sizes: '180x180' },
     ],
   },
   openGraph: {
@@ -47,7 +45,7 @@ export const metadata: Metadata = {
     description: 'HASCO delivers comprehensive integrated solutions across marine, logistics, construction, tourism, and consultancy sectors. Leading provider of professional services with global reach and local expertise.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/hero.jpeg',
         width: 1200,
         height: 630,
         alt: 'HASCO Group - Integrated Excellence',
@@ -58,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HASCO - Integrated Excellence in Marine, Logistics & Construction',
     description: 'HASCO delivers comprehensive integrated solutions across marine, logistics, construction, tourism, and consultancy sectors. Leading provider of professional services with global reach and local expertise.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/hero.jpeg'],
     creator: '@hascogroup',
   },
   alternates: {

@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hascogroup.com'
   const locales = ['en', 'ar']
-  const pages = ['', '/about', '/sectors', '/clients', '/contact', '/careers', '/terms', '/privacy']
+  const pages = ['', '/about', '/sectors', '/clients', '/contact', '/careers']
 
   const sitemapEntries: MetadataRoute.Sitemap = []
 

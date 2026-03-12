@@ -33,7 +33,7 @@ export default function About() {
         <div 
           className="absolute top-0 right-0 w-3/5 h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/images/Slide5.jpeg)'
+            backgroundImage: 'url(/images/globe.webp)'
           }}
         ></div>
       </div>

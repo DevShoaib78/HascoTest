@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
 import { Header, Footer } from '@/src/components/layout'
+import Projects from '@/src/components/sections/Projects'
 import { ArrowRight, Check } from 'lucide-react'
 
 export default function SectorsPage() {
@@ -61,7 +62,7 @@ export default function SectorsPage() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/skyline3.jpg" alt="HASCO Sectors" fill className="object-cover" priority />
+          <Image src="/images/saudi3.jpg" alt="HASCO Sectors" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/80 via-brand-primary/70 to-brand-primary/90"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32 text-center">
@@ -134,6 +135,9 @@ export default function SectorsPage() {
           })}
         </div>
       </section>
+
+      {/* Featured Projects */}
+      <Projects />
 
       {/* CTA */}
       <section id="cta-section" className="py-24 bg-gradient-to-br from-gray-50 to-white">

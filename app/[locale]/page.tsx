@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/src/components/layout'
-import { Hero, About, CEO, Sectors, Clients, Projects, Stats, CTA, InteractiveMap } from '@/src/components/sections'
+import { Hero, About, CEO, Sectors, Clients, Stats, CTA, InteractiveMap } from '@/src/components/sections'
 import { SectionTransition } from '@/src/components/ui'
 
 export default function Home() {
@@ -58,17 +58,6 @@ export default function Home() {
       >
         <div id="interactive-map">
           <InteractiveMap />
-        </div>
-      </SectionTransition>
-
-      {/* Section 5: Featured Projects (moved before stats) */}
-      <SectionTransition
-        transitionType="slide-up"
-        delay={450}
-        addDivider={false}
-      >
-        <div id="featured-projects">
-          <Projects />
         </div>
       </SectionTransition>
 

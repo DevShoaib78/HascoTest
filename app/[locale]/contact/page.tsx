@@ -72,6 +72,7 @@ export default function ContactPage() {
     { key: 'subjectTourism' },
     { key: 'subjectHospitality' },
     { key: 'subjectCareers' },
+    { key: 'subjectCustomerClient' },
   ]
 
   const offices = [

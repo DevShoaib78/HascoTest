@@ -116,7 +116,7 @@ export default function AboutPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/skyline2.jpg"
+            src="/images/saudi2.webp"
             alt="HASCO Group"
             fill
             className="object-cover"

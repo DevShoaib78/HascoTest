@@ -91,7 +91,7 @@ export default function Clients() {
                     alt={`${client.name} logo`}
                     width={200}
                     height={100}
-                    className="object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 w-auto max-h-20"
+                    className={`object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 w-auto ${client.name === 'tronox' ? 'max-h-12' : 'max-h-20'}`}
                   />
                 </div>
               </div>
