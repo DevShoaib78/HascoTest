@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
-import { useRouter, usePathname } from '@/src/lib/navigation'
+import { Link, useRouter, usePathname } from '@/src/lib/navigation'
 
 export default function Header() {
   const t = useTranslations('header')
@@ -57,7 +57,7 @@ export default function Header() {
         }`}>
           {/* Logo Section */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
+            <Link href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
               <div className="w-32 h-16 sm:w-36 sm:h-18 lg:w-40 lg:h-20 relative">
                 {/* White logo - visible when not scrolled on desktop only */}
                 <Image
@@ -80,7 +80,7 @@ export default function Header() {
                   priority
                 />
               </div>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

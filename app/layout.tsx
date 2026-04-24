@@ -66,6 +66,10 @@ export const metadata: Metadata = {
       'ar-SA': `${siteUrl}/ar`,
     },
   },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.YANDEX_VERIFICATION,
+  },
 }
 
 export default function RootLayout({
