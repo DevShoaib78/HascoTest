@@ -29,14 +29,18 @@ cPanel → **Setup Node.js App** → **Create Application**
 
 Click **Create**.
 
-### 2. Upload the project files
+### 2. Wipe the application folder and upload this zip
 
-cPanel → **File Manager** → navigate to your application root (e.g. `/home/<account>/hasconew/`).
+> **The cleanest deploy is a clean folder.** Use this exact sequence for both first-time deploys *and* every future update — it eliminates any chance of stale or mismatched files causing problems.
 
-- If anything is already in that folder from previous attempts, **delete it first** (especially any old `node_modules/` or `.next/`).
-- **Upload this entire zip** to the folder.
-- Right-click the uploaded zip → **Extract** → into the application root.
-- After extraction, the application root should directly contain `package.json`, `server.js`, `app/`, `src/`, `public/`, `messages/`, `.next/`, etc. (NOT a nested subfolder).
+1. First, **stop the Node.js app**: in **Setup Node.js App**, click **■ STOP APP**.
+2. cPanel → **File Manager** → navigate to your application root (e.g. `/home/<account>/hasconew/`).
+3. **Delete everything in that folder.** Select all files and folders (including `.next/`, `node_modules/`, `stderr.log`, all source folders, every config file) → Delete → then **View Trash → Empty Trash**.
+4. The folder should now be completely empty. Verify by clicking refresh in File Manager.
+5. **Upload `hasco-cpanel-deploy.zip`** into the now-empty folder.
+6. Right-click the uploaded zip → **Extract** → into the application root.
+7. After extraction, the folder should directly contain `package.json`, `server.js`, `app/`, `src/`, `public/`, `messages/`, `.next/`, etc. (NOT a nested subfolder). If you see a single subfolder containing everything, move its contents up one level.
+8. You can delete the zip itself after extraction to save space.
 
 ### 3. Add the environment variable
 
@@ -52,6 +56,8 @@ Click **Save**.
 ### 4. Install dependencies
 
 In the same Node.js App panel, click **▶ Run NPM Install**.
+
+> Because Step 2 wiped the entire folder (including `node_modules/`), this step is **required every time** you redeploy — not optional.
 
 Wait until it completes — typically 2–5 minutes. The output should end with a success message like *"added 400+ packages"*. **Do not proceed until this completes successfully.**
 
@@ -104,10 +110,8 @@ The app didn't start. Click **🔁 RESTART** in the panel. If it still won't sta
 
 ## Updating the site later
 
-Any time the source code changes, the `.next/` folder must be rebuilt **on a Linux machine** (the developer handles this — see `DOCUMENTATION.md` Section 6 Option D for the full process). Then:
+Any time the source code changes, the developer will rebuild the `.next/` folder on a Linux machine and send you a new zip (see `DOCUMENTATION.md` Section 6 Option D for the technical details).
 
-1. Upload only the changed files + the new `.next/` folder
-2. If `package.json` changed, click **▶ Run NPM Install** again
-3. Click **🔁 RESTART**
+When you receive a new zip, **redeploy by repeating the same 6 steps above** — wipe the folder, upload, extract, **▶ Run NPM Install**, **🔁 RESTART**. Same exact process every time. Same instructions for every update.
 
 For full project documentation, see **`DOCUMENTATION.md`** in this zip.
