@@ -60,7 +60,7 @@ The Supabase package is installed and ready for future use but not currently wir
 ## 4. Project Structure
 
 ```
-Hasco v2/
+HascoTest-main/
 ├── app/
 │   ├── [locale]/                  # Locale-scoped routes (en, ar)
 │   │   ├── page.tsx               # Home page
@@ -91,6 +91,7 @@ Hasco v2/
 ├── public/
 │   ├── images/                    # Logos, backgrounds, page imagery
 │   └── fonts/                     # Montserrat, Helvetica (self-hosted)
+├── server.js                      # Custom Node.js server entry (used by cPanel/Passenger)
 ├── middleware.ts                  # Locale routing middleware
 ├── next.config.js                 # Next.js + next-intl + image domains
 ├── tailwind.config.js             # Brand tokens (colors, fonts, sizes)
@@ -105,7 +106,7 @@ Hasco v2/
 
 ### Prerequisites
 
-- **Node.js** 18 or higher
+- **Node.js** 18 or higher (project tested on Node 20.x)
 - **npm** (bundled with Node.js)
 
 ### Setup
@@ -173,6 +174,69 @@ npm start
 
 `npm start` runs the optimised production server on port 3000 by default. Put it behind a reverse proxy (nginx, Caddy, AWS ALB, etc.) to handle HTTPS and domain routing. Ensure environment variables are exposed to the Node process.
 
+### Option D — cPanel (Namecheap / Phusion Passenger)
+
+This project ships with a `server.js` entry point so it can be hosted via cPanel's "Setup Node.js App" panel. Read this section carefully before attempting cPanel deployment — there are non-obvious constraints.
+
+#### Hard constraints
+
+1. **Never build on Windows for a Linux server.** `.next/` build artifacts contain OS-specific path separators baked in by webpack. A Windows-built `.next/` will throw `MODULE_NOT_FOUND` errors on Linux at runtime. Always build on Linux (real server, Linux VM, or **WSL on Windows**).
+2. **Shared cPanel hosts often cannot run `next build` in-place.** Next.js's middleware compiler loads llhttp via WebAssembly during build, and shared hosts' per-process memory limits frequently deny the WASM allocation (`WebAssembly: Out of memory`). The reliable workaround is to build the `.next/` folder on a Linux machine (e.g. WSL) and upload it to the server.
+3. **Match Node version.** Configure cPanel's Node.js App to use Node 20 (the project's tested version). The cPanel virtualenv activation path encodes the version — e.g. `/home/<user>/nodevenv/<app>/20/bin/activate`.
+
+#### Recommended workflow — build via WSL on a Windows machine
+
+One-time setup on the Windows machine:
+
+```powershell
+# In PowerShell as Administrator
+wsl --install
+# Reboot, then in the Ubuntu terminal:
+sudo apt update
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+Per deploy:
+
+```bash
+# Inside WSL Ubuntu terminal, from the project directory
+cd /mnt/c/path/to/HascoTest-main
+rm -rf node_modules .next
+npm install
+npm run build
+zip -r next-build.zip .next
+```
+
+#### On the cPanel server
+
+1. **Setup Node.js App** → Create application:
+   - Node.js version: **20.x**
+   - Application mode: **Production**
+   - Application root: e.g. `hasconew`
+   - Application URL: your domain or test subdomain
+   - Application startup file: **`server.js`**
+2. **File Manager** → upload your project files into the application root. Required:
+   - All source folders (`app/`, `src/`, `public/`, `messages/`)
+   - Config files (`package.json`, `package-lock.json`, `next.config.js`, `middleware.ts`, `tsconfig.json`, `next-env.d.ts`, `postcss.config.js`, `tailwind.config.js`)
+   - **`server.js`** (required for Passenger to launch the app)
+   - The Linux-built **`.next/`** folder (from WSL — extract `next-build.zip` here)
+3. **Run NPM Install** from the Node.js App panel.
+4. **Restart** the app.
+5. Visit the site URL.
+
+#### Environment variables on cPanel
+
+Set in the Node.js App panel under "Environment variables":
+
+| Name | Value |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>` |
+
+Add `GOOGLE_SITE_VERIFICATION` and `YANDEX_VERIFICATION` once available.
+
+> **Note:** `NEXT_PUBLIC_*` variables are baked into the build at build time. After changing them, you must rebuild `.next/` (in WSL) and re-upload — restarting alone won't pick up the new value.
+
 ### Deployment Checklist
 
 Before cutting over to the production domain:
@@ -181,7 +245,7 @@ Before cutting over to the production domain:
 - [ ] `GOOGLE_SITE_VERIFICATION` is set if Search Console will be used
 - [ ] `YANDEX_VERIFICATION` is set if Yandex Webmaster will be used
 - [ ] DNS points at the host (Vercel / Netlify / server IP)
-- [ ] HTTPS certificate is active (automatic on Vercel and Netlify)
+- [ ] HTTPS certificate is active (automatic on Vercel and Netlify; cPanel typically uses AutoSSL)
 - [ ] Verify both `/en` and `/ar` routes load correctly
 - [ ] Submit the sitemap at `/sitemap.xml` to Google Search Console
 
@@ -359,6 +423,7 @@ The site ships with production-ready SEO out of the box:
 - **Careers "Apply Now"** buttons are placeholders. Functionality will be added by a future developer.
 - **News section** component exists (`src/components/sections/News.tsx`) but is not mounted on any page — kept for future use.
 - **Browserslist / baseline-browser-mapping warnings** during build are informational only (the caniuse database is a few months old). Run `npx update-browserslist-db@latest` periodically to suppress them.
+- **cPanel hosting requires a Linux-built `.next/` folder.** See Section 6 Option D for details — `next build` cannot be reliably executed on shared cPanel hosts due to per-process memory caps, and a Windows-built `.next/` will fail at runtime due to path-separator differences.
 
 ---
 
@@ -377,7 +442,7 @@ Everything needed to run, deploy, and extend this site is included in this repos
 1. Clone the repo.
 2. Run `npm install` and `npm run dev`.
 3. Edit content in `messages/*.json` and see changes live.
-4. Ship to Vercel by clicking one button.
+4. Ship to Vercel by clicking one button — or follow Section 6 Option D for cPanel hosting.
 
 For any future expansion (adding a blog, wiring a real contact backend, integrating a CMS), the architecture is ready: Next.js App Router server components can be dropped in alongside the existing client components without disrupting anything.
 
@@ -385,5 +450,5 @@ For any future expansion (adding a blog, wiring a real contact backend, integrat
 
 ## Document Info
 
-**Last updated:** 24 April 2026
+**Last updated:** 5 May 2026
 **Prepared by:** Mohammed Shoaib Choudry
