@@ -25,14 +25,15 @@ This website is the digital flagship of HASCO Group: a bilingual (English + Arab
 
 - Fully responsive corporate website (mobile / tablet / desktop)
 - Bilingual: English and Arabic with full right-to-left (RTL) layout support
-- Six pages: Home, About, Sectors, Clients, Contact, Careers
+- Core pages: Home, About, Sectors, Clients, Contact, Careers, plus a dedicated detail page for each of the six sectors (`/sectors/[sector]`)
+- Sectors navigation dropdown (desktop hover with keyboard support; mobile accordion) linking directly to each sector page
 - Interactive Leaflet map showing 10 HASCO office locations across Saudi Arabia
-- Animated sector carousel on the home page
+- Animated sector carousel on the home page (cards link through to the sector detail pages)
 - Infinite auto-scrolling "Featured Projects" carousel on the Sectors page (12 projects, 2 per sector)
 - Animated statistics counters
 - Contact form and Home CTA form wired to WhatsApp (`wa.me/966126425834`)
 - Careers "Send Your CV" button opens a pre-filled Gmail compose to `careers@hasco.com.sa`
-- SEO-optimised: per-page metadata, hreflang alternates, canonical URLs, Open Graph, Twitter Cards, Organization JSON-LD structured data, sitemap, robots.txt
+- SEO-optimised: per-page metadata, hreflang alternates (including `x-default`), canonical URLs, Open Graph, Twitter Cards, Organization JSON-LD structured data, sitemap, dynamic robots.txt (`app/robots.ts`)
 - Localised 404 page for both languages
 - Smooth scrolling via Lenis, scroll-triggered section animations
 - Splash screen on initial load
@@ -65,7 +66,8 @@ HascoTest-main/
 │   ├── [locale]/                  # Locale-scoped routes (en, ar)
 │   │   ├── page.tsx               # Home page
 │   │   ├── about/                 # About page + layout.tsx (metadata)
-│   │   ├── sectors/               # Sectors page + layout.tsx
+│   │   ├── sectors/               # Sectors overview page + layout.tsx
+│   │   │   └── [sector]/          # Dynamic per-sector detail pages (page.tsx + layout.tsx)
 │   │   ├── clients/               # Clients page + layout.tsx
 │   │   ├── contact/               # Contact page + layout.tsx
 │   │   ├── careers/               # Careers page + layout.tsx
@@ -75,7 +77,8 @@ HascoTest-main/
 │   ├── globals.css                # Global styles, fonts
 │   ├── layout.tsx                 # Root metadata (SEO, OG, verification)
 │   ├── not-found.tsx              # Bilingual fallback 404
-│   └── sitemap.ts                 # Generates sitemap.xml
+│   ├── sitemap.ts                 # Generates sitemap.xml
+│   └── robots.ts                  # Generates robots.txt (dynamic, reads NEXT_PUBLIC_SITE_URL)
 ├── src/
 │   ├── components/
 │   │   ├── layout/                # Header, Footer
@@ -84,7 +87,9 @@ HascoTest-main/
 │   │   ├── ui/                    # SectionTransition, AnimatedCounter, SplashScreen
 │   │   └── providers/             # LenisProvider
 │   ├── i18n/request.ts            # next-intl config
-│   └── lib/navigation.ts          # Locale-aware Link / useRouter / usePathname
+│   └── lib/
+│       ├── navigation.ts          # Locale-aware Link / useRouter / usePathname
+│       └── sectors.ts             # Single source of truth for the 6 sectors (slug, key, image, icon)
 ├── messages/
 │   ├── en.json                    # English translations
 │   └── ar.json                    # Arabic translations
@@ -96,7 +101,6 @@ HascoTest-main/
 ├── next.config.js                 # Next.js + next-intl + image domains
 ├── tailwind.config.js             # Brand tokens (colors, fonts, sizes)
 ├── tsconfig.json                  # TypeScript strict mode + @/* path alias
-├── robots.txt                     # Search engine rules
 └── .env.example                   # Environment variable template
 ```
 
@@ -337,6 +341,14 @@ Every top-level key corresponds to a page or component (e.g. `aboutPage`, `caree
 5. Add the page to `app/sitemap.ts` so search engines discover it.
 6. Add any new translation keys to both JSON files.
 
+### Editing or Adding a Sector
+
+The six sectors are data-driven from a single file, `src/lib/sectors.ts`. Each entry defines the URL slug, the translation key, the hero image, and an icon. The Sectors overview page, the navbar dropdown, the home carousel, the sitemap, and the per-sector detail pages all derive from this list.
+
+To **edit a sector's content**, update its entry under the `sectorsPage` namespace in both `messages/en.json` and `messages/ar.json`: `title`, `description`, and `feature1` to `feature4` (shown on the Sectors overview page), plus a `detail` object (`tagline`, `overview`, `capabilities`, `approach`, `highlights`) shown on the sector's own page. Shared section labels live under `sectorsPage.detailCommon`.
+
+To **add or remove a sector**, edit the array in `src/lib/sectors.ts` and add the matching `sectorsPage.<key>` entry (with its `detail`) in both translation files. Routes, the sitemap, the dropdown, and the cross-links all update automatically.
+
 ### Replacing Images
 
 - Static site images live in `public/images/`. Replace files of the same name to swap imagery without code changes.
@@ -390,9 +402,9 @@ The site ships with production-ready SEO out of the box:
 
 - **Per-page metadata** — every page has its own localised title, description, canonical URL, hreflang alternates, and Open Graph / Twitter card tags (root metadata in `app/layout.tsx`; per-page overrides in `app/[locale]/<page>/layout.tsx`).
 - **Structured data** — an `Organization` JSON-LD schema is embedded in the locale layout with company name, logo, address, social profiles, and contact point.
-- **Sitemap** — auto-generated at `/sitemap.xml` covering all 6 pages in both locales (12 URLs total).
-- **robots.txt** — allows indexing of all public routes and points at the sitemap.
-- **hreflang** — each page declares `en-US` and `ar-SA` alternates so Google serves the right locale per region.
+- **Sitemap** — auto-generated at `/sitemap.xml` covering all pages (home, about, sectors, the six sector detail pages, clients, contact, careers) in both locales, 24 URLs total.
+- **robots.txt** — generated dynamically by `app/robots.ts` (reads `NEXT_PUBLIC_SITE_URL`), allowing indexing of all public routes and pointing at the sitemap.
+- **hreflang** — each page declares `en-US`, `ar-SA`, and `x-default` alternates so Google serves the right locale per region.
 - **Image optimisation** — every image uses `next/image` with alt text and appropriate `sizes`.
 - **Verification meta tags** — `GOOGLE_SITE_VERIFICATION` and `YANDEX_VERIFICATION` are wired up; just set the env var value to activate.
 
@@ -450,5 +462,5 @@ For any future expansion (adding a blog, wiring a real contact backend, integrat
 
 ## Document Info
 
-**Last updated:** 5 May 2026
+**Last updated:** 17 June 2026
 **Prepared by:** Mohammed Shoaib Choudry
