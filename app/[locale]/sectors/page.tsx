@@ -7,6 +7,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { Header, Footer } from '@/src/components/layout'
 import Projects from '@/src/components/sections/Projects'
 import { ArrowRight, Check } from 'lucide-react'
+import { getSectorByKey } from '@/src/lib/sectors'
 
 export default function SectorsPage() {
   const t = useTranslations('sectorsPage')
@@ -129,6 +130,13 @@ export default function SectorsPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    href={`/${locale}/sectors/${getSectorByKey(sector.key)?.slug ?? ''}`}
+                    className="group mt-8 inline-flex items-center gap-2 text-brand-primary font-heading font-bold hover:text-brand-secondary transition-colors duration-300"
+                  >
+                    {t('detailCommon.explore', { sector: t(`${sector.key}.title`) })}
+                    <ArrowRight className={`w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 ${locale === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
+                  </Link>
                 </div>
               </div>
             )

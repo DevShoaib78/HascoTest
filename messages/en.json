@@ -80,23 +80,149 @@
       "feature1": "Destination management and tourism development",
       "feature2": "Large-scale event planning and execution",
       "feature3": "Festival and cultural event coordination",
-      "feature4": "Visitor experience design and operations"
+      "feature4": "Visitor experience design and operations",
+      "detail": {
+        "tagline": "Helping the Kingdom welcome the world, from headline events to the destinations being built to host them.",
+        "overview": [
+          "Saudi Arabia has set out to become one of the most visited countries in the world, and that ambition runs through everything our tourism and events team does. We work alongside destination developers, government bodies, and private operators to turn plans on paper into places and experiences that visitors genuinely enjoy.",
+          "Our involvement covers the full arc of an event or a destination: early planning and feasibility, on-the-ground logistics, staffing and supplier coordination, and the day-to-day operations that keep guests comfortable. Whether the setting is a coastal resort still under development or a city venue hosting tens of thousands, the goal stays the same, which is a visit that feels effortless to the person living it."
+        ],
+        "capabilities": [
+          {
+            "title": "Destination development support",
+            "text": "We support tourism developers through the practical side of bringing a destination to life, coordinating the trades, services, and people needed before the first guest arrives."
+          },
+          {
+            "title": "Event planning and delivery",
+            "text": "From concept through to closing night, we plan and run events of every size, handling venues, scheduling, vendors, and the contingencies that large gatherings always bring."
+          },
+          {
+            "title": "Festivals and cultural programming",
+            "text": "We coordinate festivals and cultural events that draw large crowds, balancing local character with the operational discipline these moments demand."
+          },
+          {
+            "title": "Visitor experience and operations",
+            "text": "We design and manage the touchpoints a guest moves through, from arrival and wayfinding to hospitality and departure, so the experience holds together from start to finish."
+          }
+        ],
+        "approach": [
+          "Events are unforgiving about timing, so we plan backwards from the moment the doors open and build in the margin to absorb surprises. Local knowledge matters here as much as logistics, and our teams know how the Kingdom's venues, regulations, and seasons shape what is possible.",
+          "We also stay close to Saudi Arabia's wider tourism goals under Vision 2030. The work we take on is meant to last beyond a single season and contribute to destinations that keep drawing people back."
+        ],
+        "highlights": [
+          "Support for new and developing destinations across the Kingdom",
+          "Events from intimate gatherings to large public programs",
+          "On-site teams who manage the experience in real time"
+        ]
+      }
     },
     "hospitality": {
       "title": "Hospitality",
-      "description": "From remote project camps to luxury resort support, HASCO delivers premium hospitality and catering services that set the standard for guest experiences in even the most challenging environments.",
+      "description": "From remote project camps to luxury resorts, HASCO delivers hospitality, catering, and integrated facility management, covering the food, accommodation, cleaning, and upkeep that keep a site running and its people looked after in even the most challenging environments.",
       "feature1": "Premium catering and food services",
       "feature2": "Camp management and accommodation",
-      "feature3": "VIP guest services and concierge",
-      "feature4": "Remote site hospitality for mega-projects"
+      "feature3": "Integrated facility management",
+      "feature4": "Cleaning, security, and maintenance",
+      "detail": {
+        "tagline": "Catering, accommodation, and facility management that keep a site running and its people looked after, from a city hotel to a remote project camp.",
+        "overview": [
+          "Hospitality is often judged by its hardest moments, and many of ours take place far from the nearest city. HASCO provides catering, accommodation, and the full range of facility services for clients whose people work in remote locations, alongside support for resorts and venues that expect a refined level of care.",
+          "The thread that connects a luxury resort, a desert work camp, and the buildings we keep running is consistency. People deserve good food, clean and comfortable surroundings, and staff who pay attention, wherever the site sits. We build our operations around that expectation rather than around the convenience of the location."
+        ],
+        "capabilities": [
+          {
+            "title": "Catering and food services",
+            "text": "We run catering operations that handle large daily volumes without losing quality, with menus built around the people we are feeding and the conditions on site."
+          },
+          {
+            "title": "Camp management and accommodation",
+            "text": "We set up and manage accommodation for project workforces, covering provisioning, housekeeping, maintenance, and the everyday services that make a camp livable over months at a time."
+          },
+          {
+            "title": "Guest and concierge services",
+            "text": "For resorts and high-profile guests, we provide attentive front-of-house and concierge support tuned to what each visitor expects."
+          },
+          {
+            "title": "Remote site hospitality",
+            "text": "We specialize in standing up full hospitality operations at mega-project sites where almost nothing exists when we arrive."
+          },
+          {
+            "title": "Facility operations and maintenance",
+            "text": "We keep buildings running with mechanical, electrical, HVAC, and water-system maintenance, both planned and preventive, so facilities stay safe and operational."
+          },
+          {
+            "title": "Cleaning and housekeeping",
+            "text": "We handle professional cleaning, housekeeping, laundry, and waste management across civil and industrial spaces, from daily upkeep to specialized deep cleans."
+          },
+          {
+            "title": "Grounds, pest control, and EHS",
+            "text": "We cover landscaping, pest control and disinfection, and environment, health, and safety compliance to keep sites healthy and well kept."
+          },
+          {
+            "title": "Security services",
+            "text": "We provide manned guarding, access control, surveillance, and round-the-clock monitoring to keep people and assets protected."
+          }
+        ],
+        "approach": [
+          "Hospitality and facility work both live or die on supply and planning. We secure provisions, manage storage, and keep kitchens, accommodation, and building systems running in places where a missed delivery cannot simply be fixed the next day.",
+          "Safety and hygiene sit at the center of how we operate. Our teams follow the standards that large clients and their auditors expect, documented and ready for inspection at any time."
+        ],
+        "highlights": [
+          "Catering, cleaning, maintenance, and security from a single provider",
+          "Experience supporting the Kingdom's giga-project workforces",
+          "Hygiene and safety standards held to client audit requirements"
+        ]
+      }
     },
     "construction": {
       "title": "Construction",
-      "description": "HASCO's construction division delivers infrastructure, civil works, and facility construction for some of the Kingdom's most ambitious development projects, from coastal resorts to industrial complexes.",
-      "feature1": "Infrastructure development and civil works",
-      "feature2": "Project management and general contracting",
-      "feature3": "Temporary and permanent facility construction",
-      "feature4": "Quality assurance and safety compliance"
+      "description": "HASCO's construction division covers the built environment from the ground up, from property development and planning to civil infrastructure and the construction of permanent facilities. We deliver for some of the Kingdom's most ambitious projects, from coastal resorts to industrial complexes.",
+      "feature1": "Property development and real estate",
+      "feature2": "Infrastructure development and civil works",
+      "feature3": "General contracting and project management",
+      "feature4": "Quality assurance and safety compliance",
+      "detail": {
+        "tagline": "Property development, civil works, and facility construction for the Kingdom's most demanding projects, from the ground up.",
+        "overview": [
+          "Our construction division covers the built environment from the ground up. We develop property, lay the infrastructure and civil works that make a site usable, and raise the buildings that stand long after handover. Much of this work happens at coastal developments and industrial sites where conditions are difficult and tolerances are tight.",
+          "We act as a developer, a general contractor, and a project manager, which means we can carry a project from land and early planning through to completion, or step into a defined scope within a larger program. Either way the responsibility is the same, which is to deliver work that is safe, sound, and finished on the terms agreed."
+        ],
+        "capabilities": [
+          {
+            "title": "Property and development",
+            "text": "We develop real estate and built assets from the ground up, taking a project through planning, design, and build to a finished, operational property."
+          },
+          {
+            "title": "Infrastructure and civil works",
+            "text": "We deliver the earthworks, roads, utilities, and structural civil works that form the backbone of larger developments."
+          },
+          {
+            "title": "General contracting",
+            "text": "We manage builds end to end, coordinating subcontractors, materials, and schedules against a clear plan and budget."
+          },
+          {
+            "title": "Project management",
+            "text": "We bring planning, cost control, and oversight to projects, keeping the many moving parts aligned and accountable."
+          },
+          {
+            "title": "Temporary and permanent facilities",
+            "text": "We construct both the temporary facilities a project needs while it is underway and the permanent buildings it is judged by once complete."
+          },
+          {
+            "title": "Quality and safety",
+            "text": "We hold our sites to defined quality and safety standards, with the checks and documentation to prove it."
+          }
+        ],
+        "approach": [
+          "Construction tends to go wrong in the gaps between trades and decisions, so we put our effort into planning and coordination before the first machine moves. A well-sequenced site is a safer and a faster one.",
+          "We treat safety as a daily practice rather than a policy on a wall. Our supervisors are accountable for the conditions their crews work in, and we would rather pause to fix a hazard than carry it forward."
+        ],
+        "highlights": [
+          "Infrastructure and facilities for coastal and industrial developments",
+          "General contracting and project management under one roof",
+          "Documented quality assurance and on-site safety"
+        ]
+      }
     },
     "supplyChain": {
       "title": "Supply Chain",
@@ -104,7 +230,41 @@
       "feature1": "Procurement and vendor management",
       "feature2": "Warehousing and inventory control",
       "feature3": "Distribution and last-mile delivery",
-      "feature4": "Supply chain optimization and analytics"
+      "feature4": "Supply chain optimization and analytics",
+      "detail": {
+        "tagline": "Procurement, warehousing, and distribution that put the right materials where they are needed, when they are needed.",
+        "overview": [
+          "A project can stall on something as small as a missing part, which is why supply chain work rarely gets noticed until it fails. Our role is to make sure it does not. We manage the flow of materials from the supplier all the way to the point of use, across distances and terrain that make that harder than it sounds.",
+          "We handle the parts of the chain that clients would rather not run themselves: finding and managing vendors, holding and tracking inventory, and moving goods the last stretch to a site. Done well, this work is quiet, predictable, and easy to plan around."
+        ],
+        "capabilities": [
+          {
+            "title": "Procurement and vendor management",
+            "text": "We source materials and manage the suppliers behind them, negotiating terms and holding vendors to their delivery and quality commitments."
+          },
+          {
+            "title": "Warehousing and inventory",
+            "text": "We store and track inventory with the visibility clients need to know what they have and where it is at any moment."
+          },
+          {
+            "title": "Distribution and last-mile delivery",
+            "text": "We move goods across the Kingdom and handle the final leg to sites that are often remote and hard to reach."
+          },
+          {
+            "title": "Optimization and analytics",
+            "text": "We look for the waste and delay hidden in a supply chain and use data to tighten it over time."
+          }
+        ],
+        "approach": [
+          "We design each supply chain around the project it serves rather than forcing every client through the same template. A coastal resort and an inland industrial site have very different needs, and the plan should reflect that.",
+          "Visibility is what lets a client trust a supply chain, so we keep our reporting clear and current. When something does go wrong, the people who need to know find out early enough to act."
+        ],
+        "highlights": [
+          "End-to-end management from procurement to last-mile delivery",
+          "Inventory visibility clients can plan around",
+          "Distribution to remote sites across Saudi Arabia"
+        ]
+      }
     },
     "marine": {
       "title": "Marine",
@@ -112,20 +272,100 @@
       "feature1": "Ship agency and port operations",
       "feature2": "Marine consultancy and surveys",
       "feature3": "Professional commercial diving",
-      "feature4": "Offshore and onshore marine support"
+      "feature4": "Offshore and onshore marine support",
+      "detail": {
+        "tagline": "Ship agency, marine consultancy, and commercial diving that keep ports and offshore projects moving on both of the Kingdom's coasts.",
+        "overview": [
+          "Saudi Arabia sits between two busy seas, and HASCO works on both. Our marine division supports vessels and offshore operations across the Red Sea and the Arabian Gulf, handling the practical needs of ships in port and the specialized work that happens at and below the waterline.",
+          "Marine operations run on tight schedules and unforgiving conditions. A vessel waiting in port costs money by the hour, and offshore work leaves little room for error. Our teams are built to handle both, with the local relationships and technical skill these jobs require."
+        ],
+        "capabilities": [
+          {
+            "title": "Ship agency and port operations",
+            "text": "We act as agents for vessels calling at Saudi ports, managing clearances, berthing, supplies, and the coordination that gets a ship in and out without delay."
+          },
+          {
+            "title": "Marine consultancy and surveys",
+            "text": "We provide marine consultancy and conduct surveys that give owners and operators a clear, independent picture of condition and risk."
+          },
+          {
+            "title": "Commercial diving",
+            "text": "Our professional divers carry out the inspection, maintenance, and underwater tasks that keep marine assets safe and operational."
+          },
+          {
+            "title": "Marine support, onshore and offshore",
+            "text": "We supply the support services that offshore and coastal projects depend on, from logistics to personnel."
+          }
+        ],
+        "approach": [
+          "Port work rewards people who know the local system, and ours do. That familiarity with harbors, authorities, and the rhythm of each port is often the difference between a smooth call and a stalled one.",
+          "For diving and offshore work we hold to recognized safety procedures without exception. The conditions are too serious to treat any other way, and our crews are trained and equipped accordingly."
+        ],
+        "highlights": [
+          "Coverage across the Red Sea and the Arabian Gulf",
+          "Established relationships at the Kingdom's ports",
+          "Certified commercial diving and survey teams"
+        ]
+      }
     },
     "logistics": {
       "title": "Logistics",
       "description": "Connecting Saudi Arabia to global trade networks, HASCO's logistics division provides freight forwarding, customs brokerage, and transportation management with the precision and reliability that major projects demand.",
-      "feature1": "Freight forwarding — air, sea, and land",
+      "feature1": "Freight forwarding by air, sea, and land",
       "feature2": "Customs brokerage and clearance",
       "feature3": "Transportation management",
-      "feature4": "NVOCC shipping solutions"
+      "feature4": "NVOCC shipping solutions",
+      "detail": {
+        "tagline": "Freight forwarding, customs clearance, and transport that connect Saudi projects to global trade without the friction.",
+        "overview": [
+          "Moving goods into and across Saudi Arabia involves more than a truck and a route. It means coordinating carriers, clearing customs, and managing the paperwork that international trade runs on, all without losing time the project cannot spare. Our logistics division handles that complexity so clients can plan around firm dates rather than hope.",
+          "We move freight by air, sea, and land, and we manage the handoffs between them, which is usually where shipments get stuck. From a single urgent consignment to the steady flow of materials a long project needs, we treat each shipment as something a deadline depends on."
+        ],
+        "capabilities": [
+          {
+            "title": "Freight forwarding",
+            "text": "We arrange freight by air, sea, and land, choosing the route and mode that fit the cargo, the budget, and the timeline."
+          },
+          {
+            "title": "Customs brokerage and clearance",
+            "text": "We manage customs clearance and the documentation behind it, keeping shipments compliant and moving."
+          },
+          {
+            "title": "Transportation management",
+            "text": "We plan and oversee transport across the Kingdom, coordinating fleets and schedules to keep goods on track."
+          },
+          {
+            "title": "NVOCC shipping",
+            "text": "We offer NVOCC shipping solutions, giving clients the benefits of a carrier relationship without the overhead of running one."
+          }
+        ],
+        "approach": [
+          "Customs and documentation cause more delays than distance ever does, so we get the paperwork right the first time and stay current on rules that change. A cleared shipment is a moving shipment.",
+          "We keep clients informed across every leg of a journey, because a shipment people can see is one they can plan around. When a route is disrupted, we find the alternative rather than waiting for the problem to clear itself."
+        ],
+        "highlights": [
+          "Air, sea, and land freight under one coordinated plan",
+          "Customs clearance handled in house",
+          "NVOCC solutions for regular shipping needs"
+        ]
+      }
     },
     "cta": {
       "heading": "Need Sector-Specific Solutions?",
       "text": "Whether it's a single sector or an integrated multi-sector engagement, HASCO has the expertise to deliver. Let's discuss your requirements.",
       "button": "Contact Our Team"
+    },
+    "detailCommon": {
+      "breadcrumbHome": "Home",
+      "breadcrumbSectors": "Sectors",
+      "overviewLabel": "Overview",
+      "capabilitiesLabel": "What we do",
+      "approachLabel": "How we work",
+      "highlightsLabel": "At a glance",
+      "otherSectorsLabel": "Explore other sectors",
+      "otherSectorsText": "Six divisions, one team. See how the rest of HASCO fits together.",
+      "explore": "Explore {sector}",
+      "viewAll": "View all sectors"
     }
   },
   "clientsPage": {
@@ -280,7 +520,8 @@
     "contact": "Contact",
     "careers": "Careers",
     "search": "Search",
-    "language": "عربي"
+    "language": "عربي",
+    "allSectors": "All Sectors"
   },
   "hero": {
     "title1": "Diversified Strength.",

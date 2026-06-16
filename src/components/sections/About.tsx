@@ -31,7 +31,7 @@ export default function About() {
       {/* Background Image - Clean and Visible */}
       <div className="absolute inset-0">
         <div 
-          className="absolute top-0 right-0 w-3/5 h-full bg-cover bg-center bg-no-repeat"
+          className="absolute top-0 end-0 w-3/5 h-full bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(/images/globe.webp)'
           }}
@@ -39,7 +39,7 @@ export default function About() {
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="pl-4 sm:pl-6 lg:pl-8 pr-6 sm:pr-8 lg:pr-16">
+        <div className="ps-4 sm:ps-6 lg:ps-8 pe-6 sm:pe-8 lg:pe-16">
           {/* Section Heading - Far Left */}
           <div className={`mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-title-lg md:text-title-xl leading-tight font-heading mb-4 text-brand-primary">

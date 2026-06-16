@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column: Quick Links (horizontal) + Contact Us (horizontal) */}
-          <div className="space-y-6 lg:ml-12">
+          <div className="space-y-6 lg:ms-12">
             {/* Quick Links - Horizontal */}
             <div>
               <h3 className="text-xl font-heading mb-4">{t('quickLinks')}</h3>

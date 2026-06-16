@@ -1,6 +1,55 @@
+import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { Header, Footer } from '@/src/components/layout'
 import { Hero, About, CEO, Sectors, Clients, Stats, CTA, InteractiveMap } from '@/src/components/sections'
 import { SectionTransition } from '@/src/components/ui'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hascogroup.com'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'hero' })
+  const title =
+    locale === 'ar'
+      ? 'هاسكو - التميز المتكامل في الخدمات البحرية واللوجستية والإنشاءات'
+      : 'HASCO - Integrated Excellence in Marine, Logistics & Construction'
+  const description = t('subtitle')
+
+  return {
+    title: { absolute: title },
+    description,
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        'en-US': `${siteUrl}/en`,
+        'ar-SA': `${siteUrl}/ar`,
+        'x-default': `${siteUrl}/en`,
+      },
+    },
+    openGraph: {
+      type: 'website',
+      url: `${siteUrl}/${locale}`,
+      siteName: 'HASCO Group',
+      title,
+      description,
+      locale: locale === 'ar' ? 'ar_SA' : 'en_US',
+      images: [
+        { url: '/images/hero.jpeg', width: 1200, height: 630, alt: 'HASCO Group - Integrated Excellence' },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/images/hero.jpeg'],
+      creator: '@hascogroup',
+    },
+  }
+}
 
 export default function Home() {
   return (

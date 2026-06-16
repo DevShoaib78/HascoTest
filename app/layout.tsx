@@ -64,6 +64,7 @@ export const metadata: Metadata = {
     languages: {
       'en-US': `${siteUrl}/en`,
       'ar-SA': `${siteUrl}/ar`,
+      'x-default': `${siteUrl}/en`,
     },
   },
   verification: {

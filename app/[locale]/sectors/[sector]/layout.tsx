@@ -1,21 +1,30 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { sectors, getSectorBySlug } from '@/src/lib/sectors'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hascogroup.com'
-const path = '/sectors'
+
+export function generateStaticParams() {
+  return sectors.map((s) => ({ sector: s.slug }))
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: string; sector: string }>
 }): Promise<Metadata> {
-  const { locale } = await params
-  const t = await getTranslations({ locale, namespace: 'sectorsPage.hero' })
-  const title = t('title')
-  const description = t('subtitle')
+  const { locale, sector } = await params
+  const def = getSectorBySlug(sector)
+  if (!def) return {}
+
+  const t = await getTranslations({ locale, namespace: 'sectorsPage' })
+  const sectorName = t(`${def.key}.title`)
+  const title = `${sectorName} | HASCO Group`
+  const description = t(`${def.key}.detail.tagline`)
+  const path = `/sectors/${def.slug}`
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: {
       canonical: `${siteUrl}/${locale}${path}`,
@@ -34,10 +43,10 @@ export async function generateMetadata({
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
       images: [
         {
-          url: '/images/hero.jpeg',
+          url: def.image,
           width: 1200,
           height: 630,
-          alt: 'HASCO Group - Integrated Excellence',
+          alt: sectorName,
         },
       ],
     },
@@ -45,12 +54,16 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: ['/images/hero.jpeg'],
+      images: [def.image],
       creator: '@hascogroup',
     },
   }
 }
 
-export default function SectorsLayout({ children }: { children: React.ReactNode }) {
+export default function SectorDetailLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return children
 }

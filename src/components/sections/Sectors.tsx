@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { sectors as sectorDefs } from '@/src/lib/sectors'
 
 export default function Sectors() {
   const t = useTranslations('sectors')
@@ -135,7 +137,7 @@ export default function Sectors() {
         </div>
 
         {/* Desktop: Carousel with Navigation */}
-        <div className="hidden md:block relative">
+        <div className="hidden lg:block relative">
           {/* Navigation Buttons */}
           <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20">
             <button
@@ -184,9 +186,11 @@ export default function Sectors() {
             >
               {/* Triple the sectors for seamless infinite loop */}
               {[...sectors, ...sectors, ...sectors].map((sector, index) => (
-                <div
+                <Link
                   key={`sector-${index}`}
-                  className="relative flex-shrink-0 w-[350px] lg:w-[420px] h-[450px] lg:h-[500px] group cursor-pointer"
+                  href={`/${locale}/sectors/${sectorDefs[index % sectors.length].slug}`}
+                  aria-label={sector.title}
+                  className="relative flex-shrink-0 block w-[350px] lg:w-[420px] h-[450px] lg:h-[500px] group cursor-pointer"
                 >
                   {/* Background Image - Fully visible */}
                   <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-xl">
@@ -217,18 +221,20 @@ export default function Sectors() {
 
                   {/* Hover Ring Effect */}
                   <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-brand-secondary rounded-2xl transition-all duration-300"></div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
         </div>
 
         {/* Mobile: Card Grid Layout */}
-        <div className="md:hidden grid grid-cols-1 gap-6 px-6">
+        <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
           {sectors.map((sector, index) => (
-            <div
+            <Link
               key={sector.title}
-              className="relative overflow-hidden rounded-2xl shadow-lg h-[280px]"
+              href={`/${locale}/sectors/${sectorDefs[index].slug}`}
+              aria-label={sector.title}
+              className="relative block overflow-hidden rounded-2xl shadow-lg h-[280px]"
             >
               {/* Background Image */}
               <Image
@@ -254,15 +260,15 @@ export default function Sectors() {
                   {sector.description}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div className={`text-center mt-16 px-6 sm:px-8 lg:px-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <button className="group relative bg-brand-primary text-white px-8 py-4 text-button-lg font-heading hover:bg-brand-secondary rounded-lg shadow-lg hover:shadow-xl hover:shadow-brand-primary/30 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+          <Link href={`/${locale}/sectors`} className="group relative inline-block bg-brand-primary text-white px-8 py-4 text-button-lg font-heading hover:bg-brand-secondary rounded-lg shadow-lg hover:shadow-xl hover:shadow-brand-primary/30 transform hover:scale-105 transition-all duration-300 overflow-hidden">
             <span className="relative z-10 tracking-wide">{t('button')}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

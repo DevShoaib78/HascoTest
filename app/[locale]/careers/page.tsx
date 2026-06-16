@@ -60,7 +60,7 @@ export default function CareersPage() {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/skyline7.webp" alt="Careers at HASCO" fill className="object-cover" priority />
+          <Image src="/images/skyline7.jpg" alt="Careers at HASCO" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/80 via-brand-primary/70 to-brand-primary/90"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32 text-center">

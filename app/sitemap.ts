@@ -1,9 +1,18 @@
 import { MetadataRoute } from 'next'
+import { sectorSlugs } from '@/src/lib/sectors'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hascogroup.com'
   const locales = ['en', 'ar']
-  const pages = ['', '/about', '/sectors', '/clients', '/contact', '/careers']
+  const pages = [
+    '',
+    '/about',
+    '/sectors',
+    ...sectorSlugs.map((slug) => `/sectors/${slug}`),
+    '/clients',
+    '/contact',
+    '/careers',
+  ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []
 

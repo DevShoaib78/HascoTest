@@ -196,7 +196,7 @@ export default function InteractiveMap() {
             </div>
 
             {/* Location Grid */}
-            <div className="mt-10 grid grid-cols-3 gap-3">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3">
               {locations.map((location) => (
                 <button
                   key={location.key}

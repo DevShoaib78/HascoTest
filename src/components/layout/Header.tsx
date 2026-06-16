@@ -3,15 +3,26 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
+import { ChevronDown } from 'lucide-react'
 import { Link, useRouter, usePathname } from '@/src/lib/navigation'
+import { sectors as sectorDefs } from '@/src/lib/sectors'
 
 export default function Header() {
   const t = useTranslations('header')
+  const tSectors = useTranslations('sectorsPage')
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [sectorsOpen, setSectorsOpen] = useState(false)
+  const [mobileSectorsOpen, setMobileSectorsOpen] = useState(false)
+
+  // Sector dropdown links, derived from the single sector source of truth
+  const sectorLinks = sectorDefs.map((s) => ({
+    href: `/${locale}/sectors/${s.slug}`,
+    label: tSectors(`${s.key}.title`),
+  }))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,12 +46,12 @@ export default function Header() {
   }
 
   const navItems = [
-    { href: `/${locale}`, label: t('home'), enabled: true },
-    { href: `/${locale}/about`, label: t('about'), enabled: true },
-    { href: `/${locale}/sectors`, label: t('sectors'), enabled: true },
-    { href: `/${locale}/clients`, label: t('clients'), enabled: true },
-    { href: `/${locale}/contact`, label: t('contact'), enabled: true },
-    { href: `/${locale}/careers`, label: t('careers'), enabled: true }
+    { href: `/${locale}`, label: t('home'), enabled: true, dropdown: false },
+    { href: `/${locale}/about`, label: t('about'), enabled: true, dropdown: false },
+    { href: `/${locale}/sectors`, label: t('sectors'), enabled: true, dropdown: true },
+    { href: `/${locale}/clients`, label: t('clients'), enabled: true, dropdown: false },
+    { href: `/${locale}/contact`, label: t('contact'), enabled: true, dropdown: false },
+    { href: `/${locale}/careers`, label: t('careers'), enabled: true, dropdown: false }
   ]
 
   return (
@@ -88,27 +99,83 @@ export default function Header() {
             isScrolled ? 'mt-0' : '-mt-2'
           }`}>
             {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`group relative transition-all duration-300 font-heading font-bold text-lg tracking-wide py-3 px-2 ${
-                  isScrolled
-                    ? item.enabled
-                      ? 'text-[#004A81] hover:text-[#66AADD] cursor-pointer'
-                      : 'text-[#004A81]/50 cursor-default'
-                    : item.enabled 
-                      ? 'text-white hover:text-[#66AADD] cursor-pointer' 
-                      : 'text-white/70 cursor-default'
-                }`}
-              >
-                <span className="relative z-10">{item.label}</span>
-                {item.enabled && (
-                  <div className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-                    isScrolled ? 'bg-[#004A81]' : 'bg-[#66AADD]'
-                  }`}></div>
-                )}
-              </a>
+              item.dropdown ? (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => setSectorsOpen(true)}
+                  onMouseLeave={() => setSectorsOpen(false)}
+                  onFocus={() => setSectorsOpen(true)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) setSectorsOpen(false)
+                  }}
+                >
+                  <a
+                    href={item.href}
+                    aria-haspopup="true"
+                    aria-expanded={sectorsOpen}
+                    className={`group relative inline-flex items-center gap-1.5 transition-all duration-300 font-heading font-bold text-lg tracking-wide py-3 px-2 cursor-pointer ${
+                      isScrolled ? 'text-[#004A81] hover:text-[#66AADD]' : 'text-white hover:text-[#66AADD]'
+                    }`}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${sectorsOpen ? 'rotate-180' : ''}`} />
+                    <div className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                      isScrolled ? 'bg-[#004A81]' : 'bg-[#66AADD]'
+                    }`}></div>
+                  </a>
+
+                  {/* Dropdown panel */}
+                  <div
+                    role="menu"
+                    aria-label={item.label}
+                    className={`absolute top-full ltr:left-0 rtl:right-0 mt-1 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 transition-all duration-200 ${
+                      sectorsOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                    }`}
+                  >
+                    {sectorLinks.map((s) => (
+                      <a
+                        key={s.href}
+                        href={s.href}
+                        role="menuitem"
+                        className="block px-5 py-2.5 font-heading text-base text-[#004A81] hover:bg-[#004A81]/5 hover:text-[#66AADD] transition-colors duration-200 ltr:text-left rtl:text-right"
+                      >
+                        {s.label}
+                      </a>
+                    ))}
+                    <div className="my-2 border-t border-gray-100"></div>
+                    <a
+                      href={item.href}
+                      role="menuitem"
+                      className="block px-5 py-2.5 font-heading text-sm font-bold text-[#66AADD] hover:bg-[#004A81]/5 transition-colors duration-200 ltr:text-left rtl:text-right"
+                    >
+                      {t('allSectors')}
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`group relative transition-all duration-300 font-heading font-bold text-lg tracking-wide py-3 px-2 ${
+                    isScrolled
+                      ? item.enabled
+                        ? 'text-[#004A81] hover:text-[#66AADD] cursor-pointer'
+                        : 'text-[#004A81]/50 cursor-default'
+                      : item.enabled
+                        ? 'text-white hover:text-[#66AADD] cursor-pointer'
+                        : 'text-white/70 cursor-default'
+                  }`}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  {item.enabled && (
+                    <div className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                      isScrolled ? 'bg-[#004A81]' : 'bg-[#66AADD]'
+                    }`}></div>
+                  )}
+                </a>
+              )
             ))}
           </nav>
 
@@ -150,27 +217,71 @@ export default function Header() {
         </div>
 
         {/* Mobile menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+        <div className={`lg:hidden transition-all duration-300 ${
+          isMenuOpen ? 'max-h-[85vh] opacity-100 overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
           <div className="pt-4 pb-6 mt-2 border-t border-[#004A81]/20 bg-white/95">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => {
-                    handleNavClick(e, item.href)
-                    setIsMenuOpen(false)
-                  }}
-                  className={`transition-colors duration-300 font-heading font-bold text-base py-2 border-l-2 border-transparent pl-4 ${
-                    item.enabled
-                      ? 'text-[#004A81] hover:text-[#66AADD] hover:border-[#004A81] cursor-pointer'
-                      : 'text-[#004A81]/50 cursor-default'
-                  }`}
-                >
-                  {item.label}
-                </a>
+                item.dropdown ? (
+                  <div key={item.href}>
+                    <div className="flex items-center justify-between">
+                      <a
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex-1 transition-colors duration-300 font-heading font-bold text-base py-2 border-l-2 border-transparent pl-4 text-[#004A81] hover:text-[#66AADD] cursor-pointer"
+                      >
+                        {item.label}
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => setMobileSectorsOpen((v) => !v)}
+                        aria-expanded={mobileSectorsOpen}
+                        aria-label={item.label}
+                        className="p-2 text-[#004A81] hover:text-[#66AADD] transition-colors duration-300"
+                      >
+                        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileSectorsOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                    </div>
+                    <div className={`overflow-hidden transition-all duration-300 ${mobileSectorsOpen ? 'max-h-96' : 'max-h-0'}`}>
+                      <div className="flex flex-col ltr:pl-8 rtl:pr-8 py-1 space-y-1">
+                        {sectorLinks.map((s) => (
+                          <a
+                            key={s.href}
+                            href={s.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="font-heading text-sm py-1.5 text-[#004A81]/80 hover:text-[#66AADD] transition-colors duration-200"
+                          >
+                            {s.label}
+                          </a>
+                        ))}
+                        <a
+                          href={item.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="font-heading text-sm py-1.5 font-bold text-[#66AADD]"
+                        >
+                          {t('allSectors')}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => {
+                      handleNavClick(e, item.href)
+                      setIsMenuOpen(false)
+                    }}
+                    className={`transition-colors duration-300 font-heading font-bold text-base py-2 border-l-2 border-transparent pl-4 ${
+                      item.enabled
+                        ? 'text-[#004A81] hover:text-[#66AADD] hover:border-[#004A81] cursor-pointer'
+                        : 'text-[#004A81]/50 cursor-default'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
               
               {/* Mobile Language */}
